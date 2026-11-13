@@ -1,12 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120" role="img" aria-label="Built on Google Camera and LMC 8.4">
-  <rect width="900" height="120" rx="20" fill="#0b0714" stroke="#2a1f45"/>
-  <text x="32" y="38" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700" fill="#a78bfa">BUILT ON</text>
-  <g font-family="Inter,Segoe UI,sans-serif" font-size="20" fill="#e2e8f0">
-    <rect x="32" y="52" width="256" height="46" rx="12" fill="#151024" stroke="#3b2f5e"/>
-    <text x="52" y="82" font-weight="600">Google Camera (GCam)</text>
-    <rect x="304" y="52" width="216" height="46" rx="12" fill="#151024" stroke="#3b2f5e"/>
-    <text x="324" y="82" font-weight="600">LMC 8.4 R17</text>
-    <rect x="536" y="52" width="332" height="46" rx="12" fill="#0f1f18" stroke="#34d399"/>
-    <text x="556" y="82" font-weight="600" fill="#a7f3d0">Starlight mods, config &amp; DSLR lib</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="140" viewBox="0 0 1000 140" role="img" aria-label="Built on Google Camera GCam and LMC 8.4 R17, with Starlight modifications">
+  <defs>
+    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+      <animate attributeName="x1" values="-1;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;2" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <style><![CDATA[
+      .chip { animation: cp 4.4s ease-in-out infinite; }
+      .c2 { animation-delay:.5s } .c3 { animation-delay:1s }
+      @keyframes cp { 0%,100% { opacity:.75 } 50% { opacity:1 } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+    ]]></style>
+  </defs>
+
+  <rect width="1000" height="140" rx="20" fill="#0b0714" stroke="#2a1f45"/>
+  <rect x="20" y="104" width="960" height="3" rx="1.5" fill="url(#sh)"/>
+
+  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">
+    <text x="30" y="42" font-size="15" font-weight="800" fill="#a78bfa">BUILT ON</text>
+
+    <g class="chip">
+      <rect x="30" y="56" width="266" height="44" rx="11" fill="#151024" stroke="#3b2f5e"/>
+      <text x="50" y="84" font-size="17" font-weight="700" fill="#e2e8f0">Google Camera (GCam)</text>
+    </g>
+    <g class="chip c2">
+      <rect x="312" y="56" width="212" height="44" rx="11" fill="#151024" stroke="#3b2f5e"/>
+      <text x="332" y="84" font-size="17" font-weight="700" fill="#e2e8f0">LMC 8.4 R17</text>
+    </g>
+    <g class="chip c3">
+      <rect x="540" y="56" width="430" height="44" rx="11" fill="#0f1f18" stroke="#34d399"/>
+      <text x="560" y="84" font-size="17" font-weight="700" fill="#a7f3d0">Starlight mods, config &amp; DSLR library</text>
+    </g>
   </g>
 </svg>

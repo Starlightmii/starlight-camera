@@ -2,6 +2,8 @@
 
 <img src="assets/hero.svg" width="100%" alt="Starlight Camera vMax .51 — on-device photo and video super-resolution for Redmi Note 10 Pro Max">
 
+<img src="assets/highlights.svg" width="100%" alt="40 MP photos, 4K video, zero uploads, potato mode">
+
 # 📷 Starlight Camera vMax
 
 **Your phone's camera, unlocked.** A glass-UI GCam port with on-device photo
@@ -44,7 +46,7 @@ leaked build:
 
 ---
 
-<img src="assets/architecture.svg" width="100%" alt="Starlight Camera photo and video pipeline diagram">
+<img src="assets/architecture.svg" width="100%" alt="Animated diagram of the Starlight photo and video processing pipeline">
 
 ---
 

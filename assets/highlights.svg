@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="252" viewBox="0 0 1100 252" role="img" aria-label="Feature highlights: 24 megapixel photos, 4K video, offline processing, potato mode">
+  <defs>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ec4899"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <style><![CDATA[
+      .bar { stroke-dasharray:5 7; animation: bs 2.2s linear infinite; }
+      @keyframes bs { to { stroke-dashoffset:-24 } }
+      .card { animation: bob 5s ease-in-out infinite; }
+      .c2 { animation-delay:.6s } .c3 { animation-delay:1.2s } .c4 { animation-delay:1.8s }
+      @keyframes bob { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-6px) } }
+      .glow { animation: gw 3.6s ease-in-out infinite; }
+      @keyframes gw { 0%,100% { opacity:.25 } 50% { opacity:.7 } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+    ]]></style>
+  </defs>
+
+  <rect width="1100" height="252" rx="22" fill="#0a0713"/>
+  <rect x="1" y="1" width="1098" height="250" rx="21" fill="none" stroke="#241a3d"/>
+
+  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">
+    <g class="card">
+      <rect x="28" y="26" width="248" height="200" rx="16" fill="#140e24" stroke="#3b2f5e"/>
+      <rect class="glow" x="28" y="26" width="248" height="6" rx="3" fill="url(#c1)"/>
+      <text x="52" y="86" font-size="42" font-weight="800" fill="#ede9fe">40</text>
+      <text x="106" y="86" font-size="19" font-weight="700" fill="#a78bfa">MP max</text>
+      <text x="52" y="120" font-size="14" font-weight="700" fill="#f8fafc">Photo super-resolution</text>
+      <text x="52" y="144" font-size="12.5" fill="#94a3b8">24 MP by default.</text>
+      <text x="52" y="164" font-size="12.5" fill="#94a3b8">Tiled GPU readback,</text>
+      <text x="52" y="184" font-size="12.5" fill="#94a3b8">DNG orientation fixed.</text>
+      <path class="bar" d="M52 204 H252" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
+    </g>
+
+    <g class="card c2">
+      <rect x="292" y="26" width="248" height="200" rx="16" fill="#0c1a17" stroke="#2f6b56"/>
+      <rect class="glow" x="292" y="26" width="248" height="6" rx="3" fill="url(#c2)"/>
+      <text x="316" y="86" font-size="42" font-weight="800" fill="#d1fae5">4K</text>
+      <text x="366" y="86" font-size="19" font-weight="700" fill="#34d399">video</text>
+      <text x="316" y="120" font-size="14" font-weight="700" fill="#f8fafc">Two-pass rebuild</text>
+      <text x="316" y="144" font-size="12.5" fill="#94a3b8">1080p becomes</text>
+      <text x="316" y="164" font-size="12.5" fill="#94a3b8">3840 × 2160, audio</text>
+      <text x="316" y="184" font-size="12.5" fill="#94a3b8">kept in sync.</text>
+      <path class="bar" d="M316 204 H516" stroke="#10b981" stroke-width="2.5" fill="none"/>
+    </g>
+
+    <g class="card c3">
+      <rect x="556" y="26" width="248" height="200" rx="16" fill="#1a1207" stroke="#7c5a1e"/>
+      <rect class="glow" x="556" y="26" width="248" height="6" rx="3" fill="url(#c3)"/>
+      <text x="580" y="86" font-size="42" font-weight="800" fill="#fde68a">0</text>
+      <text x="620" y="86" font-size="19" font-weight="700" fill="#f59e0b">uploads</text>
+      <text x="580" y="120" font-size="14" font-weight="700" fill="#f8fafc">Fully offline</text>
+      <text x="580" y="144" font-size="12.5" fill="#94a3b8">No account, no cloud,</text>
+      <text x="580" y="164" font-size="12.5" fill="#94a3b8">no subscription. Your</text>
+      <text x="580" y="184" font-size="12.5" fill="#94a3b8">photos stay yours.</text>
+      <path class="bar" d="M580 204 H780" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+    </g>
+
+    <g class="card c4">
+      <rect x="820" y="26" width="252" height="200" rx="16" fill="#1a0f1f" stroke="#6d3a7a"/>
+      <rect class="glow" x="820" y="26" width="252" height="6" rx="3" fill="url(#c4)"/>
+      <text x="844" y="86" font-size="42" font-weight="800" fill="#fbcfe8">1</text>
+      <text x="872" y="86" font-size="19" font-weight="700" fill="#ec4899">switch</text>
+      <text x="844" y="120" font-size="14" font-weight="700" fill="#f8fafc">Potato mode</text>
+      <text x="844" y="144" font-size="12.5" fill="#94a3b8">16 MP, 1080p30, low</text>
+      <text x="844" y="164" font-size="12.5" fill="#94a3b8">bitrate. Fast on hot</text>
+      <text x="844" y="184" font-size="12.5" fill="#94a3b8">phones and low battery.</text>
+      <path class="bar" d="M844 204 H1048" stroke="#ec4899" stroke-width="2.5" fill="none"/>
+    </g>
+  </g>
+</svg>
