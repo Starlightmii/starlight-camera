@@ -4,10 +4,45 @@
  * One place for colour, type, spacing and the shared motion vocabulary, so
  * every generated SVG looks like it came from the same hand.
  *
- * All output is self-contained: no external fonts, scripts or images. That
- * matters because GitHub serves these through its camo proxy, which will not
- * resolve relative or remote dependencies from inside an SVG.
+ * ---------------------------------------------------------------------
+ * THE LEGIBILITY CONSTRAINT
+ * ---------------------------------------------------------------------
+ * GitHub renders a README inside a content column about 880 CSS px wide.
+ * An SVG wider than that is scaled DOWN to fit, so every font size inside
+ * it shrinks by 880 / canvasWidth.
+ *
+ * At a 1180px canvas that is a factor of 0.746: a 12px label arrives on
+ * screen as 8.9px, which is unreadable. So the canvas width is not a free
+ * choice — it dictates the minimum font the artwork may use.
+ *
+ *   canvas 880  -> min font 11.5px
+ *   canvas 1000 -> min font 13.1px
+ *   canvas 1180 -> min font 15.4px
+ *
+ * Rather than remember that, artwork declares its canvas via `canvas()`,
+ * and `type()` refuses any size that would fall below MIN_SCREEN_PX.
+ * Builds fail loudly instead of shipping unreadable labels.
  */
+
+export const GITHUB_COLUMN_PX = 880;
+export const MIN_SCREEN_PX = 11.5;
+
+/** Canvas registry: artwork sets its width, and the type guard reads it. */
+let _canvasWidth = 1180;
+export const canvas = (w) => {
+  if (!Number.isFinite(w) || w < 320) throw new Error(`bad canvas width: ${w}`);
+  _canvasWidth = w;
+  return w;
+};
+export const canvasWidth = () => _canvasWidth;
+export const scaleOnGitHub = () => GITHUB_COLUMN_PX / _canvasWidth;
+
+/** Smallest font that stays legible once GitHub scales the artwork. */
+export const minFont = () =>
+  Math.ceil((MIN_SCREEN_PX / scaleOnGitHub()) * 10) / 10;
+
+/** On-screen size of a font inside the current canvas. */
+export const screenSize = (svgPx) => svgPx * scaleOnGitHub();
 
 /* ------------------------------------------------------------------ */
 /* Tokens                                                              */
@@ -43,6 +78,17 @@ export const font =
 
 export const space = (n) => n * 4;
 export const radius = { sm: 9, md: 13, lg: 17, xl: 24 };
+
+/** Type scale. Every step is chosen to clear the legibility floor at 1180px. */
+export const type = {
+  hero: 54,
+  h1: 27,
+  h2: 20,
+  h3: 16.5,
+  body: 15,
+  small: 13.5,
+  micro: 13,
+};
 
 /* ------------------------------------------------------------------ */
 /* Motion                                                              */
@@ -101,7 +147,7 @@ export const esc = (s) =>
 
 export function text(x, y, value, o = {}) {
   const {
-    size = 13,
+    size = type.body,
     weight = 400,
     fill = color.ink,
     anchor,
@@ -109,6 +155,18 @@ export function text(x, y, value, o = {}) {
     opacity,
     cls,
   } = o;
+
+  // Guard: refuse any label that GitHub's downscaling would render illegibly.
+  if (process.env.SC_ALLOW_SMALL !== '1') {
+    const floor = minFont();
+    if (size < floor) {
+      throw new Error(
+        `text too small: ${size}px renders at ${screenSize(size).toFixed(1)}px ` +
+          `on GitHub (canvas ${_canvasWidth}, floor ${floor}px). ` +
+          `Text: "${String(value).slice(0, 40)}"`,
+      );
+    }
+  }
   const attrs = [
     `x="${x}"`,
     `y="${y}"`,

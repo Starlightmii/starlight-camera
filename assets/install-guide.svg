@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1092" viewBox="0 0 1180 1092" role="img" aria-label="Starlight Camera manual setup: phone only, no PC, no ADB, no root"><rect width="1180" height="1092" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1178" height="1090" rx="23" fill="none" stroke="#2a1f45"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="856" viewBox="0 0 880 856" role="img" aria-label="Starlight Camera setup, phone only: download, install, configure, tune"><rect width="880" height="856" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="878" height="854" rx="23" fill="none" stroke="#2a1f45"/>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#070510"/>
@@ -87,109 +87,94 @@
       @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
   </defs>
   <g filter="url(#soft)">
-    <circle class="drift" cx="150" cy="160" r="140" fill="url(#halo)"/>
-    <circle class="drift d4" cx="1040" cy="880" r="140" fill="url(#haloMint)"/>
+    <circle class="drift" cx="120" cy="140" r="110" fill="url(#halo)"/>
+    <circle class="drift d4" cx="780" cy="720" r="110" fill="url(#haloMint)"/>
   </g>
 
-  <g transform="translate(40 36)">
-    <circle class="ring" cx="30" cy="30" r="30" fill="#a78bfa" opacity=".16"/>
-    <circle cx="30" cy="30" r="21" fill="none" stroke="#a78bfa" stroke-width="3"/>
-    <path class="tick k2" transform="translate(19 31) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#34d399" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <text x="124" y="62" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="32" font-weight="800" fill="#f8fafc">Setup, phone only</text>
-  <text x="124" y="90" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#a78bfa">Starlight Camera vMax .51  ·  Redmi Note 10 Pro Max</text>
-  <text x="124" y="114" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#94a3b8">Everything happens on the phone. No PC, no cable, no root.</text>
-
-  <g font-family="" font-size="12.5" font-weight="700">
-    <rect x="830" y="42" width="128" height="32" rx="16" fill="none" stroke="#34d399"/>
-    <text x="894" y="63" text-anchor="middle" fill="#34d399">no PC</text>
-    <rect x="970" y="42" width="170" height="32" rx="16" fill="none" stroke="#34d399"/>
-    <text x="1055" y="63" text-anchor="middle" fill="#34d399">no ADB, no root</text>
-  </g>
-  <rect x="830" y="88" width="310" height="3" rx="1.5" fill="#2a1f45"/><rect class="sweep" x="830" y="87" width="150" height="5" rx="2.5" fill="url(#rail)"/>
-  <text x="40" y="138" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc" letter-spacing="1.4">Get these three files on the phone</text>
+  <text x="40" y="52" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Setup, phone only</text>
+  <text x="40" y="78" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#a78bfa">No PC, no cable, no root. About three minutes.</text>
 
   
     <g class="rise d1">
-      <rect x="40" y="150" width="348" height="44" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <text x="56" y="178" font-family="" font-size="12.5"
-            font-weight="700" fill="#a78bfa">132.4 MB</text>
-      <text x="136" y="178" font-family="" font-size="12.5"
-            font-weight="600" fill="#e2e8f0">Starlight-Camera-vMax.51.apk</text>
+      <rect x="40" y="96" width="256" height="68" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <text x="56" y="124" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13.5" font-weight="800" fill="#a78bfa">132.4 MB</text>
+      <text x="56" y="146" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" fill="#e2e8f0">the camera app</text>
     </g>
     <g class="rise d2">
-      <rect x="412" y="150" width="348" height="44" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <text x="428" y="178" font-family="" font-size="12.5"
-            font-weight="700" fill="#34d399">154 KB</text>
-      <text x="508" y="178" font-family="" font-size="12.5"
-            font-weight="600" fill="#e2e8f0">Starlight_Master.xml</text>
+      <rect x="308" y="96" width="256" height="68" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <text x="324" y="124" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13.5" font-weight="800" fill="#34d399">154 KB</text>
+      <text x="324" y="146" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" fill="#e2e8f0">the tuning config</text>
     </g>
     <g class="rise d3">
-      <rect x="784" y="150" width="348" height="44" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <text x="800" y="178" font-family="" font-size="12.5"
-            font-weight="700" fill="#f59e0b">94.5 MB</text>
-      <text x="880" y="178" font-family="" font-size="12.5"
-            font-weight="600" fill="#e2e8f0">Starlight_EOS_R10_DSLR.so</text>
+      <rect x="576" y="96" width="256" height="68" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <text x="592" y="124" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13.5" font-weight="800" fill="#f59e0b">94.5 MB</text>
+      <text x="592" y="146" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" fill="#e2e8f0">optional library</text>
     </g>
   
     <g class="rise d1">
-      <rect x="40" y="214" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="214" width="4" height="158" rx="2" fill="#a78bfa"/><path d="M53 215 H575 a12 12 0 0 1 12 12 V244 H41 V227 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="74" cy="248" r="16" fill="#a78bfa" opacity=".18"/><text x="74" y="253.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#a78bfa">1</text>
-      <text x="100" y="253" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Download the three files</text>
-      <text x="62" y="282" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Open Releases in your phone browser.</text><text x="62" y="301" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Tap each file — they land in Download.</text><text x="62" y="320" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">No PC involved at all.</text>
-      <path class="tick k1" transform="translate(542 350) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="200" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="200" width="4" height="92" rx="2" fill="#a78bfa"/>
+      <circle cx="70" cy="230" r="14" fill="#a78bfa" opacity=".18"/><text x="70" y="234.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#a78bfa">1</text>
+      <text x="94" y="235" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Download the files</text>
+      <text x="60" y="266" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Open Releases on the phone, tap each file.</text>
+      <path class="tick k1" transform="translate(402 272) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d2">
-      <rect x="612" y="214" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="612" y="214" width="4" height="158" rx="2" fill="#60a5fa"/><path d="M625 215 H1147 a12 12 0 0 1 12 12 V244 H613 V227 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="646" cy="248" r="16" fill="#60a5fa" opacity=".18"/><text x="646" y="253.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#60a5fa">2</text>
-      <text x="672" y="253" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Remove the old camera</text>
-      <text x="634" y="282" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Settings → Apps → find LMC / GCam.</text><text x="634" y="301" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Uninstall it. The package name is the</text><text x="634" y="320" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">same, so it cannot sit beside the new one.</text>
-      <path class="tick k2" transform="translate(1114 350) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#60a5fa" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="456" y="200" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="456" y="200" width="4" height="92" rx="2" fill="#60a5fa"/>
+      <circle cx="486" cy="230" r="14" fill="#60a5fa" opacity=".18"/><text x="486" y="234.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#60a5fa">2</text>
+      <text x="510" y="235" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Remove the old camera</text>
+      <text x="476" y="266" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Uninstall LMC / GCam first, same package name.</text>
+      <path class="tick k2" transform="translate(818 272) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#60a5fa" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d3">
-      <rect x="40" y="390" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="390" width="4" height="158" rx="2" fill="#a78bfa"/><path d="M53 391 H575 a12 12 0 0 1 12 12 V420 H41 V403 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="74" cy="424" r="16" fill="#a78bfa" opacity=".18"/><text x="74" y="429.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#a78bfa">3</text>
-      <text x="100" y="429" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Install the APK</text>
-      <text x="62" y="458" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Files → Download → tap the .apk → Install.</text><text x="62" y="477" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Allow installs from your file manager</text><text x="62" y="496" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">if Android asks. No root, no ADB.</text>
-      <path class="tick k3" transform="translate(542 526) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="300" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="300" width="4" height="92" rx="2" fill="#a78bfa"/>
+      <circle cx="70" cy="330" r="14" fill="#a78bfa" opacity=".18"/><text x="70" y="334.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#a78bfa">3</text>
+      <text x="94" y="335" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Install the APK</text>
+      <text x="60" y="366" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Tap it in Files, allow installs if asked.</text>
+      <path class="tick k3" transform="translate(402 372) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d4">
-      <rect x="612" y="390" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="612" y="390" width="4" height="158" rx="2" fill="#34d399"/><path d="M625 391 H1147 a12 12 0 0 1 12 12 V420 H613 V403 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="646" cy="424" r="16" fill="#34d399" opacity=".18"/><text x="646" y="429.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#34d399">4</text>
-      <text x="672" y="429" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Move the two helper files</text>
-      <text x="634" y="458" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Create folders LMC8.4 and StarlightCamera.</text><text x="634" y="477" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Drop Starlight_Master.xml into both.</text><text x="634" y="496" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Drop the .so into LMC8.4/libs.</text>
-      <path class="tick k4" transform="translate(1114 526) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#34d399" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="456" y="300" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="456" y="300" width="4" height="92" rx="2" fill="#34d399"/>
+      <circle cx="486" cy="330" r="14" fill="#34d399" opacity=".18"/><text x="486" y="334.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#34d399">4</text>
+      <text x="510" y="335" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Move the helper files</text>
+      <text x="476" y="366" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">XML into /sdcard/LMC8.4/, .so into its libs.</text>
+      <path class="tick k4" transform="translate(818 372) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#34d399" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d5">
-      <rect x="40" y="566" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="566" width="4" height="158" rx="2" fill="#22d3ee"/><path d="M53 567 H575 a12 12 0 0 1 12 12 V596 H41 V579 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="74" cy="600" r="16" fill="#22d3ee" opacity=".18"/><text x="74" y="605.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#22d3ee">5</text>
-      <text x="100" y="605" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Open it, allow permissions</text>
-      <text x="62" y="634" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Launch Starlight Camera from the drawer.</text><text x="62" y="653" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Allow Camera, Photos and Microphone.</text><text x="62" y="672" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">You should land on the viewfinder.</text>
-      <path class="tick k5" transform="translate(542 702) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#22d3ee" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="400" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="400" width="4" height="92" rx="2" fill="#22d3ee"/>
+      <circle cx="70" cy="430" r="14" fill="#22d3ee" opacity=".18"/><text x="70" y="434.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#22d3ee">5</text>
+      <text x="94" y="435" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Open it, allow permissions</text>
+      <text x="60" y="466" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Camera, Photos, Microphone.</text>
+      <path class="tick k5" transform="translate(402 472) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#22d3ee" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d6">
-      <rect x="612" y="566" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="612" y="566" width="4" height="158" rx="2" fill="#f0abfc"/><path d="M625 567 H1147 a12 12 0 0 1 12 12 V596 H613 V579 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="646" cy="600" r="16" fill="#f0abfc" opacity=".18"/><text x="646" y="605.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#f0abfc">6</text>
-      <text x="672" y="605" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Load the config</text>
-      <text x="634" y="634" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Double-tap the black area by the shutter.</text><text x="634" y="653" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Tap IMPORT → /sdcard/LMC8.4/ → the XML.</text><text x="634" y="672" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">The app restarts itself, already tuned.</text>
-      <path class="tick k6" transform="translate(1114 702) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f0abfc" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="456" y="400" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="456" y="400" width="4" height="92" rx="2" fill="#f0abfc"/>
+      <circle cx="486" cy="430" r="14" fill="#f0abfc" opacity=".18"/><text x="486" y="434.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f0abfc">6</text>
+      <text x="510" y="435" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Load the config</text>
+      <text x="476" y="466" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Double-tap beside the shutter, tap IMPORT.</text>
+      <path class="tick k6" transform="translate(818 472) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f0abfc" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d7">
-      <rect x="40" y="742" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="742" width="4" height="158" rx="2" fill="#f59e0b"/><path d="M53 743 H575 a12 12 0 0 1 12 12 V772 H41 V755 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="74" cy="776" r="16" fill="#f59e0b" opacity=".18"/><text x="74" y="781.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#f59e0b">7</text>
-      <text x="100" y="781" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Choose the library per lens</text>
-      <text x="62" y="810" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Settings → Photo processing → Library.</text><text x="62" y="829" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">In Main, Tele, Wide and Front pick</text><text x="62" y="848" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Starlight_EOS_R10_DSLR.so, then restart.</text>
-      <path class="tick k1" transform="translate(542 878) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f59e0b" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="500" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="500" width="4" height="92" rx="2" fill="#f59e0b"/>
+      <circle cx="70" cy="530" r="14" fill="#f59e0b" opacity=".18"/><text x="70" y="534.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f59e0b">7</text>
+      <text x="94" y="535" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Choose the library</text>
+      <text x="60" y="566" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Settings, Photo processing, Library, per lens.</text>
+      <path class="tick k1" transform="translate(402 572) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f59e0b" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d8">
-      <rect x="612" y="742" width="548" height="158" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="612" y="742" width="4" height="158" rx="2" fill="#f472b6"/><path d="M625 743 H1147 a12 12 0 0 1 12 12 V772 H613 V755 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-      <circle cx="646" cy="776" r="16" fill="#f472b6" opacity=".18"/><text x="646" y="781.58" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#f472b6">8</text>
-      <text x="672" y="781" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Switch the good stuff on</text>
-      <text x="634" y="810" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Settings → Starlight Camera → Auto upscale.</text><text x="634" y="829" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Video upscale for 4K, Potato mode if slow.</text><text x="634" y="848" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Shoot — enhanced copies save alongside.</text>
-      <path class="tick k2" transform="translate(1114 878) scale(1)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f472b6" stroke-width="3.20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="456" y="500" width="404" height="92" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="456" y="500" width="4" height="92" rx="2" fill="#f472b6"/>
+      <circle cx="486" cy="530" r="14" fill="#f472b6" opacity=".18"/><text x="486" y="534.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f472b6">8</text>
+      <text x="510" y="535" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Switch the good stuff on</text>
+      <text x="476" y="566" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Auto upscale, video upscale, potato mode.</text>
+      <path class="tick k2" transform="translate(818 572) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f472b6" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
 
-  <rect x="40" y="958" width="1100" height="118" rx="13" fill="#160f27" stroke="#2a1f45"/><path d="M53 959 H1127 a12 12 0 0 1 12 12 V988 H41 V971 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
-  <text x="64" y="988" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#f472b6">If something goes wrong</text>
-  <text x="64" y="1018" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Will not install</text><text x="240" y="1018" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">uninstall the old LMC / GCam first</text><text x="620" y="1018" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Config does not load</text><text x="796" y="1018" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">XML must sit in /sdcard/LMC8.4/</text><text x="64" y="1052" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Upscale does nothing</text><text x="240" y="1052" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">turn Auto upscale on in Settings</text><text x="620" y="1052" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Video upscale fails</text><text x="796" y="1052" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">keep 1.5× the output size free</text><text x="64" y="1086" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Preview tap is dead</text><text x="240" y="1086" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">pick a media opener app</text><text x="620" y="1086" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fecaca">Crashes on launch</text><text x="796" y="1086" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Apps → Clear Data, then reopen</text>
+  <rect x="40" y="616" width="800" height="176" rx="13" fill="#160f27" stroke="#2a1f45"/><path d="M53 617 H827 a12 12 0 0 1 12 12 V646 H41 V629 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
+  <text x="60" y="644" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f472b6">If something goes wrong</text>
+  <circle cx="64" cy="674" r="3.6" fill="#f472b6"/><text x="76" y="678" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Will not install</text><text x="76" y="694" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">uninstall the old LMC / GCam</text><circle cx="468" cy="674" r="3.6" fill="#f472b6"/><text x="480" y="678" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Config does not load</text><text x="480" y="694" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">XML must be in /sdcard/LMC8.4/</text><circle cx="64" cy="710" r="3.6" fill="#f472b6"/><text x="76" y="714" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Upscale does nothing</text><text x="76" y="730" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">turn Auto upscale on</text><circle cx="468" cy="710" r="3.6" fill="#f472b6"/><text x="480" y="714" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Video upscale fails</text><text x="480" y="730" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">keep 1.5× output size free</text><circle cx="64" cy="746" r="3.6" fill="#f472b6"/><text x="76" y="750" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Preview tap is dead</text><text x="76" y="766" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">pick a media opener app</text><circle cx="468" cy="746" r="3.6" fill="#f472b6"/><text x="480" y="750" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fecaca">Crashes on launch</text><text x="480" y="766" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Apps, Clear Data, reopen</text>
   </svg>

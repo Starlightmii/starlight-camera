@@ -1,37 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="140" viewBox="0 0 1000 140" role="img" aria-label="Built on Google Camera GCam and LMC 8.4 R17, with Starlight modifications">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="128" viewBox="0 0 880 128" role="img" aria-label="Built on Google Camera (GCam) and LMC 8.4 R17, with Starlight modifications">
   <defs>
-    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="bwRail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
       <stop offset=".5" stop-color="#f0abfc" stop-opacity=".85"/>
       <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
-      <animate attributeName="x1" values="-1;1" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="0;2" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x1" values="-1;1" dur="5.2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;2" dur="5.2s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="bwBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070510"/><stop offset="1" stop-color="#0b0716"/>
     </linearGradient>
     <style><![CDATA[
-      .chip { animation: cp 4.4s ease-in-out infinite; }
-      .c2 { animation-delay:.5s } .c3 { animation-delay:1s }
-      @keyframes cp { 0%,100% { opacity:.75 } 50% { opacity:1 } }
+      .bwChip { animation: bwPulse 4.4s ease-in-out infinite; }
+      .bw2 { animation-delay:.55s } .bw3 { animation-delay:1.1s }
+      @keyframes bwPulse { 0%,100% { opacity:.78 } 50% { opacity:1 } }
       @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
     ]]></style>
   </defs>
 
-  <rect width="1000" height="140" rx="20" fill="#0b0714" stroke="#2a1f45"/>
-  <rect x="20" y="104" width="960" height="3" rx="1.5" fill="url(#sh)"/>
+  <rect width="880" height="128" rx="24" fill="url(#bwBg)"/>
+  <rect x="1" y="1" width="878" height="126" rx="23" fill="none" stroke="#2a1f45"/>
+  <rect x="24" y="102" width="832" height="3" rx="1.5" fill="url(#bwRail)"/>
 
-  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">
-    <text x="30" y="42" font-size="15" font-weight="800" fill="#a78bfa">BUILT ON</text>
+  <text x="28" y="42" font-family="Inter, 'Segoe UI', sans-serif" font-size="13" font-weight="800"
+        fill="#a78bfa" letter-spacing="2">BUILT ON</text>
 
-    <g class="chip">
-      <rect x="30" y="56" width="266" height="44" rx="11" fill="#151024" stroke="#3b2f5e"/>
-      <text x="50" y="84" font-size="17" font-weight="700" fill="#e2e8f0">Google Camera (GCam)</text>
-    </g>
-    <g class="chip c2">
-      <rect x="312" y="56" width="212" height="44" rx="11" fill="#151024" stroke="#3b2f5e"/>
-      <text x="332" y="84" font-size="17" font-weight="700" fill="#e2e8f0">LMC 8.4 R17</text>
-    </g>
-    <g class="chip c3">
-      <rect x="540" y="56" width="430" height="44" rx="11" fill="#0f1f18" stroke="#34d399"/>
-      <text x="560" y="84" font-size="17" font-weight="700" fill="#a7f3d0">Starlight mods, config &amp; DSLR library</text>
-    </g>
+  <g class="bwChip">
+    <rect x="28" y="56" width="256" height="38" rx="19" fill="#1b1230" stroke="#3b2f5e"/>
+    <text x="156" y="80" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif"
+          font-size="15" font-weight="700" fill="#e2e8f0">Google Camera (GCam)</text>
+  </g>
+  <g class="bwChip bw2">
+    <rect x="296" y="56" width="184" height="38" rx="19" fill="#1b1230" stroke="#3b2f5e"/>
+    <text x="388" y="80" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif"
+          font-size="15" font-weight="700" fill="#e2e8f0">LMC 8.4 R17</text>
+  </g>
+  <g class="bwChip bw3">
+    <rect x="492" y="56" width="360" height="38" rx="19" fill="#0f1f18" stroke="#34d399"/>
+    <text x="672" y="80" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif"
+          font-size="15" font-weight="700" fill="#a7f3d0">Starlight mods, config &amp; DSLR library</text>
   </g>
 </svg>

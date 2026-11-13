@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="596" viewBox="0 0 1180 596" role="img" aria-label="How to choose the Starlight library for Main, Tele, Wide and Front lenses"><rect width="1180" height="596" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1178" height="594" rx="23" fill="none" stroke="#2a1f45"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" role="img" aria-label="How to choose the Starlight library for Main, Tele, Wide and Front lenses"><rect width="880" height="500" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="878" height="498" rx="23" fill="none" stroke="#2a1f45"/>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#070510"/>
@@ -87,115 +87,101 @@
       @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
   </defs>
   <g filter="url(#soft)">
-    <circle class="drift" cx="200" cy="200" r="130" fill="url(#halo)"/>
-    <circle class="drift d3" cx="1020" cy="480" r="120" fill="url(#haloMint)"/>
+    <circle class="drift" cx="150" cy="180" r="110" fill="url(#halo)"/>
+    <circle class="drift d4" cx="760" cy="400" r="110" fill="url(#haloMint)"/>
   </g>
 
-  <g transform="translate(40 36)">
-    <circle class="ring" cx="30" cy="30" r="30" fill="#a78bfa" opacity=".16"/>
-    <circle cx="30" cy="30" r="21" fill="none" stroke="#a78bfa" stroke-width="3"/>
-    <circle cx="30" cy="30" r="8" fill="#a78bfa" opacity=".85"/>
-  </g>
-  <text x="124" y="62" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="31" font-weight="800" fill="#f8fafc">Set the library for every lens</text>
-  <text x="124" y="90" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#a78bfa">One file, four slots. About a minute.</text>
-  <text x="124" y="114" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Skip it and the camera still works — it just uses the default processing.</text>
+  <text x="40" y="52" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Set the library for every lens</text>
+  <text x="40" y="78" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#a78bfa">One file, four slots.</text>
+  <text x="40" y="102" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Optional — the camera works without it, using default processing.</text>
 
-  <rect x="830" y="88" width="310" height="3" rx="1.5" fill="#2a1f45"/><rect class="sweep" x="830" y="87" width="150" height="5" rx="2.5" fill="url(#rail)"/>
-
-  <text x="40" y="168" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc" letter-spacing="1.4">Get there</text>
+  <text x="40" y="138" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc" letter-spacing="2">THEN</text>
   
     <g class="rise d1">
-      <rect x="40" y="186" width="264" height="52" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <circle cx="70" cy="212" r="14" fill="#f0abfc" opacity=".18"/><text x="70" y="216.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f0abfc">1</text>
-      <text x="92" y="217" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Open Starlight Camera</text>
-      <path class="dash d1" d="M308 212 H322" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="40" y="150" width="190" height="46" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <circle cx="66" cy="173" r="12.5" fill="#f0abfc" opacity=".18"/><text x="66" y="177.68" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc">1</text>
+      <text x="86" y="178" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Open the app</text>
+      <path class="dash d1" d="M234 173 H242" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
     </g>
     <g class="rise d2">
-      <rect x="328" y="186" width="264" height="52" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <circle cx="358" cy="212" r="14" fill="#f0abfc" opacity=".18"/><text x="358" y="216.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f0abfc">2</text>
-      <text x="380" y="217" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Settings</text>
-      <path class="dash d2" d="M596 212 H610" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="242" y="150" width="190" height="46" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <circle cx="268" cy="173" r="12.5" fill="#f0abfc" opacity=".18"/><text x="268" y="177.68" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc">2</text>
+      <text x="288" y="178" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Settings</text>
+      <path class="dash d2" d="M436 173 H444" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
     </g>
     <g class="rise d3">
-      <rect x="616" y="186" width="264" height="52" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <circle cx="646" cy="212" r="14" fill="#f0abfc" opacity=".18"/><text x="646" y="216.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f0abfc">3</text>
-      <text x="668" y="217" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Photo processing</text>
-      <path class="dash d3" d="M884 212 H898" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="444" y="150" width="190" height="46" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <circle cx="470" cy="173" r="12.5" fill="#f0abfc" opacity=".18"/><text x="470" y="177.68" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc">3</text>
+      <text x="490" y="178" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Photo processing</text>
+      <path class="dash d3" d="M638 173 H646" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
     </g>
     <g class="rise d4">
-      <rect x="904" y="186" width="264" height="52" rx="13" fill="#160f27" stroke="#2a1f45"/>
-      <circle cx="934" cy="212" r="14" fill="#f0abfc" opacity=".18"/><text x="934" y="216.86" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#f0abfc">4</text>
-      <text x="956" y="217" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Library</text>
+      <rect x="646" y="150" width="190" height="46" rx="11" fill="#160f27" stroke="#2a1f45"/>
+      <circle cx="672" cy="173" r="12.5" fill="#f0abfc" opacity=".18"/><text x="672" y="177.68" text-anchor="middle" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#f0abfc">4</text>
+      <text x="692" y="178" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Library</text>
       
     </g>
 
-  <text x="40" y="244" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#34d399" letter-spacing="1.4">Then pick the file in each row</text>
+  <text x="40" y="202" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#34d399" letter-spacing="2">PICK THE FILE IN EACH ROW</text>
   
     <g class="rise d2">
-      <rect x="40" y="256" width="636" height="60" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="256" width="4" height="60" rx="2" fill="#a78bfa"/>
-      <circle class="ring" cx="84" cy="286" r="15" fill="#a78bfa" opacity=".16"/>
-      <circle cx="84" cy="286" r="6.5" fill="#a78bfa"/>
-      <text x="116" y="282" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#f8fafc">Main camera</text>
-      <text x="116" y="302" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">108 MP S5KHM2</text>
-      <rect x="606" y="276" width="0" height="0"/>
-      <text x="558" y="283" text-anchor="end" font-family=""
-            font-size="12" font-weight="700" fill="#a78bfa">libs_key</text>
-      <path class="tick k1" transform="translate(642 286) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="214" width="424" height="50" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="214" width="4" height="50" rx="2" fill="#a78bfa"/>
+      <circle class="ring" cx="74" cy="239" r="13" fill="#a78bfa" opacity=".16"/>
+      <circle cx="74" cy="239" r="5.6" fill="#a78bfa"/>
+      <text x="100" y="236" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f8fafc">Main camera</text>
+      <text x="100" y="254" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#6b7280">108 MP S5KHM2</text>
+      <text x="446" y="243" text-anchor="end" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" font-weight="700" fill="#a78bfa">libs_key</text>
+      <path class="tick k1" transform="translate(430 239) scale(0.8)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#a78bfa" stroke-width="4.00" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d3">
-      <rect x="40" y="326" width="636" height="60" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="326" width="4" height="60" rx="2" fill="#60a5fa"/>
-      <circle class="ring" cx="84" cy="356" r="15" fill="#60a5fa" opacity=".16"/>
-      <circle cx="84" cy="356" r="6.5" fill="#60a5fa"/>
-      <text x="116" y="352" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#f8fafc">Tele camera</text>
-      <text x="116" y="372" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">2× zoom</text>
-      <rect x="606" y="346" width="0" height="0"/>
-      <text x="558" y="353" text-anchor="end" font-family=""
-            font-size="12" font-weight="700" fill="#a78bfa">libs_key_2</text>
-      <path class="tick k2" transform="translate(642 356) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#60a5fa" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="272" width="424" height="50" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="272" width="4" height="50" rx="2" fill="#60a5fa"/>
+      <circle class="ring" cx="74" cy="297" r="13" fill="#60a5fa" opacity=".16"/>
+      <circle cx="74" cy="297" r="5.6" fill="#60a5fa"/>
+      <text x="100" y="294" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f8fafc">Tele camera</text>
+      <text x="100" y="312" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#6b7280">2× zoom</text>
+      <text x="446" y="301" text-anchor="end" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" font-weight="700" fill="#a78bfa">libs_key_2</text>
+      <path class="tick k2" transform="translate(430 297) scale(0.8)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#60a5fa" stroke-width="4.00" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d4">
-      <rect x="40" y="396" width="636" height="60" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="396" width="4" height="60" rx="2" fill="#22d3ee"/>
-      <circle class="ring" cx="84" cy="426" r="15" fill="#22d3ee" opacity=".16"/>
-      <circle cx="84" cy="426" r="6.5" fill="#22d3ee"/>
-      <text x="116" y="422" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#f8fafc">Wide angle</text>
-      <text x="116" y="442" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">IMX355 ultra-wide</text>
-      <rect x="606" y="416" width="0" height="0"/>
-      <text x="558" y="423" text-anchor="end" font-family=""
-            font-size="12" font-weight="700" fill="#a78bfa">libs_key_3</text>
-      <path class="tick k3" transform="translate(642 426) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#22d3ee" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="330" width="424" height="50" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="330" width="4" height="50" rx="2" fill="#22d3ee"/>
+      <circle class="ring" cx="74" cy="355" r="13" fill="#22d3ee" opacity=".16"/>
+      <circle cx="74" cy="355" r="5.6" fill="#22d3ee"/>
+      <text x="100" y="352" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f8fafc">Wide angle</text>
+      <text x="100" y="370" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#6b7280">IMX355 ultra-wide</text>
+      <text x="446" y="359" text-anchor="end" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" font-weight="700" fill="#a78bfa">libs_key_3</text>
+      <path class="tick k3" transform="translate(430 355) scale(0.8)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#22d3ee" stroke-width="4.00" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g class="rise d5">
-      <rect x="40" y="466" width="636" height="60" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="466" width="4" height="60" rx="2" fill="#f0abfc"/>
-      <circle class="ring" cx="84" cy="496" r="15" fill="#f0abfc" opacity=".16"/>
-      <circle cx="84" cy="496" r="6.5" fill="#f0abfc"/>
-      <text x="116" y="492" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#f8fafc">Front camera</text>
-      <text x="116" y="512" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">IMX471 selfie</text>
-      <rect x="606" y="486" width="0" height="0"/>
-      <text x="558" y="493" text-anchor="end" font-family=""
-            font-size="12" font-weight="700" fill="#a78bfa">libs_key_front</text>
-      <path class="tick k4" transform="translate(642 496) scale(0.85)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f0abfc" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="388" width="424" height="50" rx="11" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="388" width="4" height="50" rx="2" fill="#f0abfc"/>
+      <circle class="ring" cx="74" cy="413" r="13" fill="#f0abfc" opacity=".16"/>
+      <circle cx="74" cy="413" r="5.6" fill="#f0abfc"/>
+      <text x="100" y="410" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f8fafc">Front camera</text>
+      <text x="100" y="428" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#6b7280">IMX471 selfie</text>
+      <text x="446" y="417" text-anchor="end" font-family="Inter, 'Segoe UI', sans-serif"
+            font-size="13" font-weight="700" fill="#a78bfa">libs_key_front</text>
+      <path class="tick k4" transform="translate(430 413) scale(0.8)" d="M0 0 l7 8 l15 -19" fill="none" stroke="#f0abfc" stroke-width="4.00" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
-  <path class="dash d2" d="M682 286 H718" stroke="#7c8aa5"
-               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d3" d="M682 356 H718" stroke="#7c8aa5"
-               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d4" d="M682 426 H718" stroke="#7c8aa5"
-               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d5" d="M682 496 H718" stroke="#7c8aa5"
+  <path class="dash d2" d="M468 239 H486" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d3" d="M468 297 H486" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d4" d="M468 355 H486" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash d5" d="M468 413 H486" stroke="#7c8aa5"
                stroke-width="2" fill="none" marker-end="url(#ar)"/>
-  
-    <g class="lift">
-      <rect x="756" y="256" width="384" height="280" rx="13" fill="#0c1a17" stroke="#2f6b56"/><rect x="756" y="256" width="4" height="280" rx="2" fill="#34d399"/>
-      <text x="786" y="292" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" fill="#34d399">Pick this file</text>
-      <rect x="786" y="310" width="322" height="46" rx="11" fill="#0a1712" stroke="#2f6b56"/>
-      <text x="802" y="339" font-family="" font-size="13"
-            font-weight="700" fill="#a7f3d0">Starlight_EOS_R10_DSLR.so</text>
-      <text x="786" y="384" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">It is already in place if you copied it</text>
-      <text x="786" y="403" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">into /sdcard/LMC8.4/libs/</text>
-      <line x1="786" y1="424" x2="1110" y2="424" stroke="#2f6b56" opacity=".5"/>
-      <text x="786" y="452" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Do the same for every lens you shoot with.</text>
-      <text x="786" y="471" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">Leave a lens on Default to keep the</text>
-      <text x="786" y="490" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">stock processing for it.</text>
-      <text x="786" y="518" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f59e0b">Restart the camera afterwards.</text>
-    </g>
 
-  <rect x="40" y="534" width="1100" height="42" rx="13" fill="#160f27" stroke="#2a1f45"/>
-  <text x="62" y="560" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7280">Optional. This swaps in the Starlight-tuned processing recipe; the camera works without it.</text>
+  <g class="lift">
+    <rect x="500" y="214" width="340" height="224" rx="11" fill="#0c1a17" stroke="#2f6b56"/><rect x="500" y="214" width="4" height="224" rx="2" fill="#34d399"/>
+    <text x="522" y="246" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#34d399">Pick this file</text>
+    <rect x="522" y="262" width="296" height="42" rx="9" fill="#0a1712" stroke="#2f6b56"/>
+    <text x="536" y="289" font-family="Inter, 'Segoe UI', sans-serif" font-size="13"
+          font-weight="700" fill="#a7f3d0">Starlight_EOS_R10_DSLR.so</text>
+    <text x="522" y="330" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Already in /sdcard/LMC8.4/libs/</text>
+    <text x="522" y="350" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">if you copied it earlier.</text>
+    <line x1="522" y1="368" x2="818" y2="368" stroke="#2f6b56" opacity=".5"/>
+    <text x="522" y="394" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Do the same for each lens.</text>
+    <text x="522" y="414" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#f59e0b">Restart the camera.</text>
+  </g>
+
+  <text x="40" y="480" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#6b7280">Everything is on-device. Nothing about your photos leaves the phone.</text>
   </svg>
