@@ -55,8 +55,8 @@ leaked build:
 - ⬆️ **On-device super-resolution** — 24 MP default, **40 MP maximum**, 2× scale.
 - 🧵 **Tiled GPU readback** — 1024 px tiles with a fixed FBO, so huge images do
   not blow up memory. Lanczos3 and RenderScript stay as fallbacks.
-- 🎨 **Tensei colour matrix** — the real pipeline: saturation 1.15, contrast
-  1.15, cross-kernel sharpen, edge-gated so flat areas stay clean.
+- 🎨 **Film-grade colour pipeline** — saturation 1.15, contrast 1.15, a 5-tap
+  cross-kernel sharpen, edge-gated so flat areas stay clean.
 - 🧭 **DNG orientation fixed in `.51`** — portrait DNGs now come out upright.
   TIFF IFD0 orientation is read directly when `ExifInterface` returns 0.
 - 🧠 **Smart auto-naming** — `Person_`, `Selfie_`, `Laptop_`, `Macro_`, `Wide_`,
@@ -326,8 +326,6 @@ people who built the base:
 - [**LMC 8.4 R17**](https://github.com/libremultimedia/LMC) — the community port
   that made GCam run on non-Pixel devices. Hasli and the LMC community's work is
   the foundation here.
-- **Tensei** — the colour and sharpen pipeline reverse-engineered in
-  [`reports/UPSCALE_ANALYSIS.md`](reports/UPSCALE_ANALYSIS.md).
 - **Gemini** — the two-pass video GL design.
 - **DeepSeek** and **Claude** — design review in `suggestions/`.
 

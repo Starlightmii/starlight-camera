@@ -18,7 +18,7 @@
     <text x="272" y="130" font-weight="600">StarlightSR</text><text x="272" y="152" fill="#94a3b8" font-size="13">tiled GPU readback</text>
 
     <rect x="492" y="104" width="196" height="64" rx="12" fill="#171029" stroke="#4c3a7a"/>
-    <text x="508" y="130" font-weight="600">Lanczos3 fallback</text><text x="508" y="152" fill="#94a3b8" font-size="13">Tensei colour + unsharp</text>
+    <text x="508" y="130" font-weight="600">Lanczos3 fallback</text><text x="508" y="152" fill="#94a3b8" font-size="13">colour + edge-gated sharpen</text>
 
     <rect x="728" y="104" width="180" height="64" rx="12" fill="#0f1f18" stroke="#34d399"/>
     <text x="744" y="130" font-weight="600">24 / 40 MP out</text><text x="744" y="152" fill="#6ee7b7" font-size="13">JPEG q98 · EXIF fixed</text>
