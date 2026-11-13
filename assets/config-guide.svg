@@ -1,118 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="512" viewBox="0 0 1080 512"
-     role="img" aria-label="Configuration guide: settings to change and what the three sliders do">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="340" viewBox="0 0 1180 340" role="img" aria-label="Which settings to change and what the three sliders do"><rect width="1180" height="340" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1178" height="338" rx="23" fill="none" stroke="#2a1f45"/>
   <defs>
-    <linearGradient id="sh2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#34d399" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#a7f3d0" stop-opacity=".9"/>
-      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070510"/>
+      <stop offset=".55" stop-color="#0b0716"/>
+      <stop offset="1" stop-color="#070510"/>
     </linearGradient>
+
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+
+    <linearGradient id="video" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="haloMint" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#34d399" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#7c8aa5"/>
+    </marker>
+
     <style><![CDATA[
-      .trail { stroke-dasharray:7 9; animation: trail 1.5s linear infinite; }
-      @keyframes trail { to { stroke-dashoffset:-32 } }
-      .step  { animation: breathe 3s ease-in-out infinite; }
-      @keyframes breathe { 0%,100% { opacity:.6 } 50% { opacity:1 } }
-      .s2 { animation-delay:.35s } .s3 { animation-delay:.7s }
-      .s4 { animation-delay:1.05s } .s5 { animation-delay:1.4s }
-      .pop  { animation: pop 2.6s ease-in-out infinite; }
-      @keyframes pop { 0%,100% { transform:scale(1) } 50% { transform:scale(1.06) } }
-      .p2 { animation-delay:.4s } .p3 { animation-delay:.8s } .p4 { animation-delay:1.2s }
-      .sweep { animation: sweep 4.6s ease-in-out infinite; }
-      @keyframes sweep { 0% { transform:translateX(0); opacity:0 }
-                         12% { opacity:1 } 88% { opacity:1 } 100% { transform:translateX(940px); opacity:0 } }
-      .tick { stroke-dasharray:48; stroke-dashoffset:48; animation: tick 3s ease-in-out infinite; }
-      @keyframes tick { 0% { stroke-dashoffset:48 } 45%,75% { stroke-dashoffset:0 } 100% { stroke-dashoffset:48 } }
-      .k2 { animation-delay:.5s } .k3 { animation-delay:1s } .k4 { animation-delay:1.5s }
+      .rise   { animation: rise 3.4s ease-in-out infinite; }
+      @keyframes rise   { 0%,100% { opacity:.62 } 50% { opacity:1 } }
+      .d1{animation-delay:.3s}.d2{animation-delay:.6s}.d3{animation-delay:.9s}
+      .d4{animation-delay:1.2s}.d5{animation-delay:1.5s}.d6{animation-delay:1.8s}
+      .d7{animation-delay:2.1s}.d8{animation-delay:2.4s}
+
+      .dash   { stroke-dasharray:6 8; animation: dash 1.7s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset:-28 } }
+
+      .tick   { stroke-dasharray:56; stroke-dashoffset:56;
+                animation: tick 3.6s cubic-bezier(.65,0,.35,1) infinite; }
+      @keyframes tick { 0%{stroke-dashoffset:56} 40%,74%{stroke-dashoffset:0}
+                        100%{stroke-dashoffset:56} }
+      .k1{animation-delay:.35s}.k2{animation-delay:.7s}.k3{animation-delay:1.05s}
+      .k4{animation-delay:1.4s}.k5{animation-delay:1.75s}.k6{animation-delay:2.1s}
+
+      .glow  { animation: glow 4s ease-in-out infinite; }
+      @keyframes glow { 0%,100%{opacity:.26} 50%{opacity:.92} }
+
+      .sweep { animation: sweep 5.2s cubic-bezier(.4,0,.6,1) infinite; }
+      @keyframes sweep { 0%{transform:translateX(-200px)} 100%{transform:translateX(1300px)} }
+
+      .drift { animation: drift 17s ease-in-out infinite; }
+      @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(38px,-22px)} }
+
+      .lift  { animation: lift 5.4s ease-in-out infinite; }
+      @keyframes lift { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+
+      .spin  { animation: spin 30s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg) } }
+
+      .ring  { animation: ring 4.4s ease-in-out infinite; }
+      @keyframes ring { 0%,100%{opacity:.32;transform:scale(1)}
+                        50%{opacity:.8;transform:scale(1.06)} }
+
+      .tw    { animation: tw 3.6s ease-in-out infinite; }
+      @keyframes tw { 0%,100%{opacity:.14} 50%{opacity:.92} }
+
       @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
   </defs>
-
-  <rect width="1080" height="512" rx="22" fill="#0a0713"/>
-  <rect x="1" y="1" width="1078" height="510" rx="21" fill="none" stroke="#241a3d"/>
-
-  <text x="40" y="46" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="24" font-weight="800" fill="#f8fafc">Configure it properly</text>
-  <text x="40" y="72" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" fill="#8b93a7">Five settings worth touching, and what each slider actually changes.</text>
-
-  <rect x="40" y="104" width="436" height="356" rx="16" fill="#120c1f" stroke="#2a1f45"/>
-  <text x="56" y="136" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#a78bfa">Settings to change</text>
-  
-    <g class="step s1">
-      <text x="56" y="168" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Photo quality</text>
-      <text x="436" y="168" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
-            font-weight="700" fill="#a78bfa">Max</text>
-      <rect x="56" y="178" width="380" height="8" rx="4" fill="#241b3d"/>
-      <rect x="56" y="178" width="210" height="8" rx="4" fill="#a78bfa">
-        <animate attributeName="width" values="0;210" dur="2.8s" begin="0.2s" fill="freeze"/>
-      </rect>
-    </g>
-    <g class="step s2">
-      <text x="56" y="230" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Upscale scale</text>
-      <text x="436" y="230" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
-            font-weight="700" fill="#22d3ee">2×</text>
-      <rect x="56" y="240" width="380" height="8" rx="4" fill="#241b3d"/>
-      <rect x="56" y="240" width="150" height="8" rx="4" fill="#22d3ee">
-        <animate attributeName="width" values="0;150" dur="2.8s" begin="0.2s" fill="freeze"/>
-      </rect>
-    </g>
-    <g class="step s3">
-      <text x="56" y="292" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Smart naming</text>
-      <text x="436" y="292" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
-            font-weight="700" fill="#34d399">On</text>
-      <rect x="56" y="302" width="380" height="8" rx="4" fill="#241b3d"/>
-      <rect x="56" y="302" width="260" height="8" rx="4" fill="#34d399">
-        <animate attributeName="width" values="0;260" dur="2.8s" begin="0.2s" fill="freeze"/>
-      </rect>
-    </g>
-    <g class="step s4">
-      <text x="56" y="354" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Video upscale</text>
-      <text x="436" y="354" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
-            font-weight="700" fill="#f0abfc">On</text>
-      <rect x="56" y="364" width="380" height="8" rx="4" fill="#241b3d"/>
-      <rect x="56" y="364" width="260" height="8" rx="4" fill="#f0abfc">
-        <animate attributeName="width" values="0;260" dur="2.8s" begin="0.2s" fill="freeze"/>
-      </rect>
-    </g>
-    <g class="step s5">
-      <text x="56" y="416" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Potato mode</text>
-      <text x="436" y="416" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
-            font-weight="700" fill="#f59e0b">Off</text>
-      <rect x="56" y="426" width="380" height="8" rx="4" fill="#241b3d"/>
-      <rect x="56" y="426" width="70" height="8" rx="4" fill="#f59e0b">
-        <animate attributeName="width" values="0;70" dur="2.8s" begin="0.2s" fill="freeze"/>
-      </rect>
-    </g>
-
-  <rect x="512" y="104" width="528" height="356" rx="16" fill="#0d1a16" stroke="#2f6b56"/>
-  <text x="536" y="136" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#34d399">The three sliders</text>
-  <text x="536" y="158" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">Off is a genuine bypass on all three.</text>
-  
-    <g class="step s1">
-      <text x="536" y="182" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Denoise</text>
-      <rect x="536" y="194" width="300" height="10" rx="5" fill="#241b3d"/>
-      <rect x="536" y="194" width="130" height="10" rx="5" fill="#60a5fa">
-        <animate attributeName="width" values="0;130" dur="2.6s" begin="0.3s" fill="freeze"/>
-      </rect>
-      <circle class="pop p1" cx="666" cy="199" r="9" fill="#0a0713" stroke="#60a5fa" stroke-width="3"/>
-      <text x="536" y="232" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">Low by day, higher at night</text>
-    </g>
-    <g class="step s2">
-      <text x="536" y="258" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Detail</text>
-      <rect x="536" y="270" width="300" height="10" rx="5" fill="#241b3d"/>
-      <rect x="536" y="270" width="168" height="10" rx="5" fill="#34d399">
-        <animate attributeName="width" values="0;168" dur="2.6s" begin="0.3s" fill="freeze"/>
-      </rect>
-      <circle class="pop p2" cx="704" cy="275" r="9" fill="#0a0713" stroke="#34d399" stroke-width="3"/>
-      <text x="536" y="308" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">Medium is a safe default</text>
-    </g>
-    <g class="step s3">
-      <text x="536" y="334" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Sharpen</text>
-      <rect x="536" y="346" width="300" height="10" rx="5" fill="#241b3d"/>
-      <rect x="536" y="346" width="100" height="10" rx="5" fill="#f472b6">
-        <animate attributeName="width" values="0;100" dur="2.6s" begin="0.3s" fill="freeze"/>
-      </rect>
-      <circle class="pop p3" cx="636" cy="351" r="9" fill="#0a0713" stroke="#f472b6" stroke-width="3"/>
-      <text x="536" y="384" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">Low for faces, high for text</text>
-    </g>
-
-  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#8b93a7">
-    <text x="40" y="492">💡 40 MP and 4K are heavy jobs on a 732G — use Potato mode when you want the shot fast, Max when you want the print.</text>
+  <g filter="url(#soft)">
+    <circle class="drift" cx="200" cy="170" r="120" fill="url(#halo)"/>
+    <circle class="drift d3" cx="1000" cy="200" r="120" fill="url(#haloMint)"/>
   </g>
-</svg>
+
+  <rect x="40" y="24" width="500" height="292" rx="13" fill="#120c20" stroke="#2a1f45"/><path d="M53 25 H527 a12 12 0 0 1 12 12 V54 H41 V37 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
+  <text x="64" y="56" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" fill="#a78bfa">Settings worth touching</text>
+  <text x="72" y="96" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#e2e8f0">Auto upscale</text>
+         <rect x="368" y="82" width="38.8" height="20" rx="10" fill="#a78bfa" opacity=".85"/>
+         <text x="448" y="96" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#a78bfa">ON</text><text x="72" y="142" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#e2e8f0">Video upscale</text>
+         <rect x="368" y="128" width="90.60000000000001" height="20" rx="10" fill="#f0abfc" opacity=".85"/>
+         <text x="448" y="142" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f0abfc">ON for 4K</text><text x="72" y="188" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#e2e8f0">Potato mode</text>
+         <rect x="368" y="174" width="112.80000000000001" height="20" rx="10" fill="#f59e0b" opacity=".85"/>
+         <text x="448" y="188" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f59e0b">only if slow</text><text x="72" y="234" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#e2e8f0">Media opener</text>
+         <rect x="368" y="220" width="112.80000000000001" height="20" rx="10" fill="#f472b6" opacity=".85"/>
+         <text x="448" y="234" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f472b6">your gallery</text>
+  <text x="72" y="294" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7280">Everything else can stay on Default.</text>
+
+  <rect x="564" y="24" width="576" height="292" rx="13" fill="#0c1a17" stroke="#2f6b56"/><path d="M577 25 H1127 a12 12 0 0 1 12 12 V54 H565 V37 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
+  <text x="588" y="56" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" fill="#34d399">The three sliders</text>
+  <text x="588" y="76" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7280">Off on all three is a genuine bypass.</text>
+  
+      <g class="rise d1">
+        <text x="588" y="112" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Denoise</text>
+        <text x="904" y="112" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">temporal + chroma</text>
+        <rect x="588" y="124" width="300" height="9" rx="4.5" fill="#221a3a"/>
+        <rect x="588" y="124" width="44" height="9" rx="4.5" fill="#60a5fa"/>
+        <circle cx="632" cy="128.5" r="8.5" fill="#0b0716" stroke="#60a5fa" stroke-width="3"
+                class="ring"/>
+        <text x="588" y="154" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8">Cleaner but softer. Low by day, higher at night.</text>
+      </g>
+      <g class="rise d2">
+        <text x="588" y="180" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Detail</text>
+        <text x="904" y="180" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">dual-band separation</text>
+        <rect x="588" y="192" width="300" height="9" rx="4.5" fill="#221a3a"/>
+        <rect x="588" y="192" width="62" height="9" rx="4.5" fill="#34d399"/>
+        <circle cx="650" cy="196.5" r="8.5" fill="#0b0716" stroke="#34d399" stroke-width="3"
+                class="ring"/>
+        <text x="588" y="222" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8">Micro-contrast and texture. Medium is a safe default.</text>
+      </g>
+      <g class="rise d3">
+        <text x="588" y="248" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Sharpen</text>
+        <text x="904" y="248" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6b7280">directional de-blur</text>
+        <rect x="588" y="260" width="300" height="9" rx="4.5" fill="#221a3a"/>
+        <rect x="588" y="260" width="34" height="9" rx="4.5" fill="#f472b6"/>
+        <circle cx="622" cy="264.5" r="8.5" fill="#0b0716" stroke="#f472b6" stroke-width="3"
+                class="ring"/>
+        <text x="588" y="290" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8">Edge definition. Low for faces, higher for text.</text>
+      </g>
+  </svg>

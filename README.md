@@ -53,7 +53,7 @@ https://github.com/user-attachments/assets/fd2f6c26-102b-444d-87c9-b53441eb8a99
 
 ## ⬇️ Install
 
-<img src="assets/setup-manual.svg" width="100%" alt="Setup infographic: phone only, no PC, no ADB, no root">
+<img src="assets/install-guide.svg" width="100%" alt="Starlight Camera setup, phone only: download, install, move files, configure, tune">
 
 <sub>That is the whole install. No PC, no cable, no root — all on the phone.</sub>
 
@@ -63,10 +63,6 @@ https://github.com/user-attachments/assets/fd2f6c26-102b-444d-87c9-b53441eb8a99
 2. **Uninstall** any old GCam / LMC build first — the package name is the same.
 3. **Tap the APK** in your file manager and install.
 4. **Open it** and allow Camera, Photos and Microphone.
-
-<img src="assets/install-guide.svg" width="100%" alt="Five step install: download, install, import config, choose library, verify">
-
----
 
 <details>
 <summary><b>Optional: load the tuned config and the library</b></summary>

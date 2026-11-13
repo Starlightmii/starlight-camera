@@ -1,98 +1,190 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-label="Starlight Camera processing pipeline">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-label="Animated diagram of the Starlight photo and video pipeline"><rect width="1180" height="560" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1178" height="558" rx="23" fill="none" stroke="#2a1f45"/>
   <defs>
-    <linearGradient id="ph" x1="0" x2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
-    <linearGradient id="vi" x1="0" x2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070510"/>
+      <stop offset=".55" stop-color="#0b0716"/>
+      <stop offset="1" stop-color="#070510"/>
+    </linearGradient>
+
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+
+    <linearGradient id="video" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="haloMint" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#34d399" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
     <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
       <path d="M0,0 L0,6 L7,3 z" fill="#7c8aa5"/>
     </marker>
+
     <style><![CDATA[
-      .flow { stroke-dasharray:7 9; animation: fd 1.6s linear infinite; }
-      @keyframes fd { to { stroke-dashoffset:-32 } }
-      .node { animation: pulse 3.2s ease-in-out infinite; }
-      @keyframes pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
-      .n2 { animation-delay:.4s } .n3 { animation-delay:.8s } .n4 { animation-delay:1.2s }
-      .n5 { animation-delay:1.6s } .n6 { animation-delay:2s } .n7 { animation-delay:2.4s }
-      .sweep { animation: sw 4.5s ease-in-out infinite; }
-      @keyframes sw { 0% { transform:translateX(0) } 100% { transform:translateX(1000px) } }
-      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
-    ]]></style>
+      .rise   { animation: rise 3.4s ease-in-out infinite; }
+      @keyframes rise   { 0%,100% { opacity:.62 } 50% { opacity:1 } }
+      .d1{animation-delay:.3s}.d2{animation-delay:.6s}.d3{animation-delay:.9s}
+      .d4{animation-delay:1.2s}.d5{animation-delay:1.5s}.d6{animation-delay:1.8s}
+      .d7{animation-delay:2.1s}.d8{animation-delay:2.4s}
+
+      .dash   { stroke-dasharray:6 8; animation: dash 1.7s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset:-28 } }
+
+      .tick   { stroke-dasharray:56; stroke-dashoffset:56;
+                animation: tick 3.6s cubic-bezier(.65,0,.35,1) infinite; }
+      @keyframes tick { 0%{stroke-dashoffset:56} 40%,74%{stroke-dashoffset:0}
+                        100%{stroke-dashoffset:56} }
+      .k1{animation-delay:.35s}.k2{animation-delay:.7s}.k3{animation-delay:1.05s}
+      .k4{animation-delay:1.4s}.k5{animation-delay:1.75s}.k6{animation-delay:2.1s}
+
+      .glow  { animation: glow 4s ease-in-out infinite; }
+      @keyframes glow { 0%,100%{opacity:.26} 50%{opacity:.92} }
+
+      .sweep { animation: sweep 5.2s cubic-bezier(.4,0,.6,1) infinite; }
+      @keyframes sweep { 0%{transform:translateX(-200px)} 100%{transform:translateX(1300px)} }
+
+      .drift { animation: drift 17s ease-in-out infinite; }
+      @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(38px,-22px)} }
+
+      .lift  { animation: lift 5.4s ease-in-out infinite; }
+      @keyframes lift { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+
+      .spin  { animation: spin 30s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg) } }
+
+      .ring  { animation: ring 4.4s ease-in-out infinite; }
+      @keyframes ring { 0%,100%{opacity:.32;transform:scale(1)}
+                        50%{opacity:.8;transform:scale(1.06)} }
+
+      .tw    { animation: tw 3.6s ease-in-out infinite; }
+      @keyframes tw { 0%,100%{opacity:.14} 50%{opacity:.92} }
+
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
   </defs>
-
-  <rect width="1100" height="500" rx="24" fill="#0a0713"/>
-  <rect x="1" y="1" width="1098" height="498" rx="23" fill="none" stroke="#241a3d"/>
-
-  <text x="36" y="50" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="25" font-weight="800" fill="#f8fafc">Processing pipeline</text>
-  <text x="36" y="76" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" fill="#8b93a7">Every stage runs on the device. No network calls, ever.</text>
-
-  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">
-    <text x="36" y="112" font-size="15" font-weight="800" fill="#a78bfa">PHOTO</text>
-    <g font-size="14" fill="#e2e8f0">
-      <rect class="node"    x="36"  y="124" width="176" height="66" rx="13" fill="#171029" stroke="#4c3a7a"/>
-      <text x="54" y="152" font-weight="700">GCam capture</text>
-      <text x="54" y="174" fill="#8b93a7" font-size="12">JPEG / DNG / RAW</text>
-
-      <rect class="node n2" x="246" y="124" width="184" height="66" rx="13" fill="#171029" stroke="#4c3a7a"/>
-      <text x="264" y="152" font-weight="700">StarlightSR</text>
-      <text x="264" y="174" fill="#8b93a7" font-size="12">1024px tiled GPU readback</text>
-
-      <rect class="node n3" x="464" y="124" width="184" height="66" rx="13" fill="#171029" stroke="#4c3a7a"/>
-      <text x="482" y="152" font-weight="700">Lanczos3 fallback</text>
-      <text x="482" y="174" fill="#8b93a7" font-size="12">colour matrix + unsharp</text>
-
-      <rect class="node n4" x="682" y="124" width="176" height="66" rx="13" fill="#0f1f18" stroke="#34d399"/>
-      <text x="700" y="152" font-weight="700">24 / 40 MP</text>
-      <text x="700" y="174" fill="#6ee7b7" font-size="12">JPEG q98 · EXIF upright</text>
-
-      <rect class="node n5" x="892" y="124" width="172" height="66" rx="13" fill="#0f1f18" stroke="#34d399"/>
-      <text x="910" y="152" font-weight="700">Gallery</text>
-      <text x="910" y="174" fill="#6ee7b7" font-size="12">_Starlight named</text>
-    </g>
-    <g stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)">
-      <path class="flow" d="M212 157 H242"/>
-      <path class="flow" d="M430 157 H460"/>
-      <path class="flow" d="M648 157 H678"/>
-      <path class="flow" d="M858 157 H888"/>
-    </g>
-
-    <text x="36" y="242" font-size="15" font-weight="800" fill="#34d399">VIDEO</text>
-    <g font-size="14" fill="#e2e8f0">
-      <rect class="node n2" x="36"  y="254" width="166" height="66" rx="13" fill="#0d1a16" stroke="#2f6b56"/>
-      <text x="54" y="282" font-weight="700">MediaCodec</text>
-      <text x="54" y="304" fill="#8b93a7" font-size="12">hardware decode</text>
-
-      <rect class="node n3" x="236" y="254" width="196" height="66" rx="13" fill="#0d1a16" stroke="#2f6b56"/>
-      <text x="254" y="282" font-weight="700">Pass 1 — clean</text>
-      <text x="254" y="304" fill="#8b93a7" font-size="12">chroma bilateral, BT.709</text>
-
-      <rect class="node n4" x="466" y="254" width="196" height="66" rx="13" fill="#0d1a16" stroke="#2f6b56"/>
-      <text x="484" y="282" font-weight="700">Pass 2 — detail</text>
-      <text x="484" y="304" fill="#8b93a7" font-size="12">de-blur, dual-band, IGN</text>
-
-      <rect class="node n5" x="696" y="254" width="164" height="66" rx="13" fill="#0f1f18" stroke="#34d399"/>
-      <text x="714" y="282" font-weight="700">1:1 cadence</text>
-      <text x="714" y="304" fill="#6ee7b7" font-size="12">no frame blending</text>
-
-      <rect class="node n6" x="894" y="254" width="170" height="66" rx="13" fill="#0f1f18" stroke="#34d399"/>
-      <text x="912" y="282" font-weight="700">4K output</text>
-      <text x="912" y="304" fill="#6ee7b7" font-size="12">AAC audio kept</text>
-    </g>
-    <g stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)">
-      <path class="flow" d="M202 287 H232"/>
-      <path class="flow" d="M432 287 H462"/>
-      <path class="flow" d="M662 287 H692"/>
-      <path class="flow" d="M860 287 H890"/>
-    </g>
-
-    <rect x="36" y="352" width="1028" height="120" rx="15" fill="#120c1f" stroke="#2a1f45"/>
-    <text x="56" y="380" font-size="15" font-weight="800" fill="#f0abfc">Controls, safety and diagnostics</text>
-    <g font-size="13.5" fill="#cbd5e1">
-      <text x="56" y="408">🎛️ Denoise / Detail / Sharpen — full range, Off is truly zero</text>
-      <text x="56" y="432">🥔 Potato mode — 16 MP, 1080p30, lower bitrate</text>
-      <text x="56" y="456">📊 Rolling starlight.log + exit-reason dump</text>
-
-      <text x="600" y="408">🧠 Capability probe picks a sustainable video tier</text>
-      <text x="600" y="432">🌡️ Thermal and storage prechecks with pacing</text>
-      <text x="600" y="456">🧵 Separate :sr process, so video never blocks the UI</text>
-    </g>
+  <g filter="url(#soft)">
+    <circle class="drift" cx="180" cy="180" r="130" fill="url(#halo)"/>
+    <circle class="drift d4" cx="1000" cy="420" r="130" fill="url(#haloMint)"/>
   </g>
-</svg>
+
+  <text x="40" y="54" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Photo &amp; video pipeline</text>
+  <text x="40" y="80" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#94a3b8">Every stage runs on the phone. No network calls, ever.</text>
+  <rect x="40" y="96" width="1100" height="3" rx="1.5" fill="#2a1f45"/><rect class="sweep" x="40" y="95" width="150" height="5" rx="2.5" fill="url(#rail)"/>
+
+  <text x="40" y="122" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#a78bfa" letter-spacing="2">PHOTO</text>
+  
+    <g class="rise d1">
+      <rect x="40" y="132" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="132" width="4" height="96" rx="2" fill="#a78bfa"/>
+      <text x="58" y="160" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">GCam capture</text>
+      <text x="58" y="182" font-family=""
+                   font-size="11.5" fill="#94a3b8">JPEG · DNG · RAW</text>
+    </g><path class="dash d1" d="M238 180 H250" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d2">
+      <rect x="256" y="132" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="256" y="132" width="4" height="96" rx="2" fill="#a78bfa"/>
+      <text x="274" y="160" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">StarlightSR</text>
+      <text x="274" y="182" font-family=""
+                   font-size="11.5" fill="#94a3b8">1024 px tiled GPU</text><text x="274" y="199" font-family=""
+                   font-size="11.5" fill="#94a3b8">readback</text>
+    </g><path class="dash d2" d="M454 180 H466" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d3">
+      <rect x="472" y="132" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="472" y="132" width="4" height="96" rx="2" fill="#60a5fa"/>
+      <text x="490" y="160" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">Lanczos3 fallback</text>
+      <text x="490" y="182" font-family=""
+                   font-size="11.5" fill="#94a3b8">colour matrix</text><text x="490" y="199" font-family=""
+                   font-size="11.5" fill="#94a3b8">edge-gated sharpen</text>
+    </g><path class="dash d3" d="M670 180 H682" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d4">
+      <rect x="688" y="132" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="688" y="132" width="4" height="96" rx="2" fill="#34d399"/>
+      <text x="706" y="160" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">24 / 40 MP</text>
+      <text x="706" y="182" font-family=""
+                   font-size="11.5" fill="#94a3b8">JPEG q98</text><text x="706" y="199" font-family=""
+                   font-size="11.5" fill="#94a3b8">EXIF upright</text>
+    </g><path class="dash d4" d="M886 180 H898" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d5">
+      <rect x="904" y="132" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="904" y="132" width="4" height="96" rx="2" fill="#34d399"/>
+      <text x="922" y="160" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">Gallery</text>
+      <text x="922" y="182" font-family=""
+                   font-size="11.5" fill="#94a3b8">named _Starlight</text>
+    </g>
+
+  <text x="40" y="286" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#34d399" letter-spacing="2">VIDEO</text>
+  
+    <g class="rise d2">
+      <rect x="40" y="296" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="40" y="296" width="4" height="96" rx="2" fill="#34d399"/>
+      <text x="58" y="324" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">MediaCodec</text>
+      <text x="58" y="346" font-family=""
+                   font-size="11.5" fill="#94a3b8">hardware decode</text>
+    </g><path class="dash d1" d="M238 344 H250" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d3">
+      <rect x="256" y="296" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="256" y="296" width="4" height="96" rx="2" fill="#34d399"/>
+      <text x="274" y="324" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">Pass 1 · clean</text>
+      <text x="274" y="346" font-family=""
+                   font-size="11.5" fill="#94a3b8">chroma bilateral</text><text x="274" y="363" font-family=""
+                   font-size="11.5" fill="#94a3b8">BT.709 luma</text>
+    </g><path class="dash d2" d="M454 344 H466" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d4">
+      <rect x="472" y="296" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="472" y="296" width="4" height="96" rx="2" fill="#22d3ee"/>
+      <text x="490" y="324" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">Pass 2 · detail</text>
+      <text x="490" y="346" font-family=""
+                   font-size="11.5" fill="#94a3b8">de-blur · dual-band</text><text x="490" y="363" font-family=""
+                   font-size="11.5" fill="#94a3b8">IGN dithering</text>
+    </g><path class="dash d3" d="M670 344 H682" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d5">
+      <rect x="688" y="296" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="688" y="296" width="4" height="96" rx="2" fill="#22d3ee"/>
+      <text x="706" y="324" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">1:1 cadence</text>
+      <text x="706" y="346" font-family=""
+                   font-size="11.5" fill="#94a3b8">no frame blending</text>
+    </g><path class="dash d4" d="M886 344 H898" stroke="#7c8aa5"
+         stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <g class="rise d6">
+      <rect x="904" y="296" width="196" height="96" rx="13" fill="#120c20" stroke="#2a1f45"/><rect x="904" y="296" width="4" height="96" rx="2" fill="#a3e635"/>
+      <text x="922" y="324" font-family="" font-size="14"
+            font-weight="700" fill="#f8fafc">4K output</text>
+      <text x="922" y="346" font-family=""
+                   font-size="11.5" fill="#94a3b8">AAC audio kept</text>
+    </g>
+
+  <rect x="40" y="424" width="1100" height="106" rx="13" fill="#160f27" stroke="#2a1f45"/><path d="M53 425 H1127 a12 12 0 0 1 12 12 V454 H41 V437 a12 12 0 0 1 12 -12 Z" fill="#ffffff" opacity=".022"/>
+  <text x="62" y="452" font-family="Inter, 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#f0abfc">Controls and safety</text>
+  <circle cx="66" cy="476" r="4" fill="#60a5fa"/><text x="80" y="480" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Denoise · Detail · Sharpen</text><text x="80" y="495" font-family="" font-size="11" fill="#6b7280">full range — Off is truly zero</text><circle cx="432" cy="476" r="4" fill="#34d399"/><text x="446" y="480" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Capability probe</text><text x="446" y="495" font-family="" font-size="11" fill="#6b7280">picks a sustainable video tier</text><circle cx="798" cy="476" r="4" fill="#f59e0b"/><text x="812" y="480" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Potato mode</text><text x="812" y="495" font-family="" font-size="11" fill="#6b7280">16 MP · 1080p30 · lower bitrate</text><circle cx="66" cy="510" r="4" fill="#22d3ee"/><text x="80" y="514" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Thermal + storage prechecks</text><text x="80" y="529" font-family="" font-size="11" fill="#6b7280">with pacing, so long clips are safe</text><circle cx="432" cy="510" r="4" fill="#a78bfa"/><text x="446" y="514" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Separate :sr process</text><text x="446" y="529" font-family="" font-size="11" fill="#6b7280">video work never blocks the UI</text><circle cx="798" cy="510" r="4" fill="#f472b6"/><text x="812" y="514" font-family="" font-size="12.5" font-weight="700" fill="#e2e8f0">Rolling starlight.log</text><text x="812" y="529" font-family="" font-size="11" fill="#6b7280">plus an exit-reason dump</text>
+  </svg>
