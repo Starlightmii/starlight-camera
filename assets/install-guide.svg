@@ -86,7 +86,7 @@
             font-size="16" font-weight="800" fill="#f59e0b">4</text>
       <text x="746" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
             font-weight="700" fill="#f8fafc">Add the DSLR lib</text>
-      <text x="708" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Optional: push the .so to</text><text x="708" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">/sdcard/StarlightCamera/libs/</text><text x="708" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Pick it in Settings → Libs</text>
+      <text x="708" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Optional: push the .so to</text><text x="708" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">/sdcard/StarlightCamera/libs/</text><text x="708" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Settings → Photo processing → Library</text>
       <path class="tick k4" d="M840 288 l7 8 l14 -18"
             fill="none" stroke="#f59e0b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
     </g><path class="trail" d="M887 216 H899" stroke="#7c8aa5"

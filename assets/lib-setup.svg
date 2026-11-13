@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640"
+     viewBox="0 0 1180 640" role="img" aria-label="How to set the Starlight DSLR library for every camera lens">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0715"/><stop offset=".55" stop-color="#090613"/>
+      <stop offset="1" stop-color="#0b0715"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#7c8aa5"/>
+    </marker>
+    <style><![CDATA[
+      .dash { stroke-dasharray:6 8; animation: dash 1.6s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset:-28 } }
+      .soft { animation: soft 3.4s ease-in-out infinite; }
+      @keyframes soft { 0%,100% { opacity:.6 } 50% { opacity:1 } }
+      .s2 { animation-delay:.28s } .s3 { animation-delay:.56s } .s4 { animation-delay:.84s }
+      .s5 { animation-delay:1.12s } .s6 { animation-delay:1.4s } .s7 { animation-delay:1.68s }
+      .s8 { animation-delay:1.96s }
+      .tick { stroke-dasharray:54; stroke-dashoffset:54; animation: tick 3.4s ease-in-out infinite; }
+      @keyframes tick { 0% { stroke-dashoffset:54 } 42%,74% { stroke-dashoffset:0 } 100% { stroke-dashoffset:54 } }
+      .t2 { animation-delay:.4s } .t3 { animation-delay:.8s } .t4 { animation-delay:1.2s }
+      .t5 { animation-delay:1.6s } .t6 { animation-delay:2s }
+      .glow { animation: glow 3.8s ease-in-out infinite; }
+      @keyframes glow { 0%,100% { opacity:.28 } 50% { opacity:.9 } }
+      .sweep { animation: sweep 5s ease-in-out infinite; }
+      @keyframes sweep { 0% { transform:translateX(-160px) } 100% { transform:translateX(1260px) } }
+      .lift { animation: lift 5s ease-in-out infinite; }
+      @keyframes lift { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-5px) } }
+      .ring { animation: ring 4.2s ease-in-out infinite; }
+      @keyframes ring { 0%,100% { opacity:.35; transform:scale(1) } 50% { opacity:.85; transform:scale(1.05) } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
+  </defs>
+  <rect width="1180" height="640" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1178" height="638" rx="23" fill="none" stroke="#241a3d"/>
+
+  <g transform="translate(40 44)">
+    <circle class="ring" cx="30" cy="30" r="30" fill="#a78bfa" opacity=".18"/>
+    <circle cx="30" cy="30" r="21" fill="none" stroke="#a78bfa" stroke-width="3"/>
+    <circle cx="30" cy="30" r="9" fill="#a78bfa" opacity=".85"/>
+  </g>
+  <text x="126" y="62" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="31" font-weight="800" fill="#f8fafc">Set the library for every lens</text>
+  <text x="126" y="90" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" fill="#a78bfa">One file, four slots. Takes about a minute.</text>
+  <text x="126" y="116" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#8b93a7">Skip this and the camera still works — it just uses the default processing.</text>
+
+  <rect x="852" y="46" width="288" height="3" rx="1.5" fill="#241b3d"/>
+  <rect class="sweep" x="852" y="45" width="140" height="5" rx="2.5" fill="url(#rail)"/>
+
+  <!-- how to get there -->
+  <text x="40" y="172" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#f0abfc">Get there</text>
+  <g>
+    
+      <rect x="40" y="190" width="264" height="54" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <text x="58" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="800"
+            fill="#a78bfa">1</text>
+      <text x="80" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#e2e8f0">Open Starlight Camera</text>
+      <text x="80" y="233" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#7c8aa5">from the app drawer</text>
+      <path class="dash" d="M308 217 H322" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="326" y="190" width="264" height="54" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <text x="344" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="800"
+            fill="#a78bfa">2</text>
+      <text x="366" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#e2e8f0">Second from top row settings</text>
+      <text x="366" y="233" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#7c8aa5">gear icon, top right</text>
+      <path class="dash" d="M594 217 H608" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="612" y="190" width="264" height="54" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <text x="630" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="800"
+            fill="#a78bfa">3</text>
+      <text x="652" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#e2e8f0">Photo processing</text>
+      <text x="652" y="233" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#7c8aa5">tap it</text>
+      <path class="dash" d="M880 217 H894" stroke="#7c8aa5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <rect x="898" y="190" width="264" height="54" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <text x="916" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="800"
+            fill="#a78bfa">4</text>
+      <text x="938" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#e2e8f0">Library</text>
+      <text x="938" y="233" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#7c8aa5">tap it</text>
+      
+  </g>
+
+  <text x="40" y="266" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#34d399">Then pick the file in every lens row</text>
+
+  
+    <g class="soft s2">
+      <rect x="40" y="268" width="640" height="64" rx="15" fill="#120c1f" stroke="#2f2549"/><rect x="40" y="268" width="4" height="64" rx="2" fill="#a78bfa"/>
+      <circle cx="86" cy="300" r="16" fill="#a78bfa" opacity=".18" class="ring"/>
+      <circle cx="86" cy="300" r="7" fill="#a78bfa" opacity=".9"/>
+      <text x="120" y="296" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#f8fafc">Main camera</text>
+      <text x="120" y="318" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#94a3b8">108 MP S5KHM2</text>
+      <text x="654" y="304" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#c4b5fd">libs_key</text>
+      <path class="tick t2" d="M640 300 l7 8 l15 -19" fill="none" stroke="#a78bfa"
+         stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="soft s3">
+      <rect x="40" y="346" width="640" height="64" rx="15" fill="#120c1f" stroke="#2f2549"/><rect x="40" y="346" width="4" height="64" rx="2" fill="#818cf8"/>
+      <circle cx="86" cy="378" r="16" fill="#818cf8" opacity=".18" class="ring"/>
+      <circle cx="86" cy="378" r="7" fill="#818cf8" opacity=".9"/>
+      <text x="120" y="374" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#f8fafc">Tele camera</text>
+      <text x="120" y="396" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#94a3b8">2× zoom</text>
+      <text x="654" y="382" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#c4b5fd">libs_key_2</text>
+      <path class="tick t3" d="M640 378 l7 8 l15 -19" fill="none" stroke="#818cf8"
+         stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="soft s4">
+      <rect x="40" y="424" width="640" height="64" rx="15" fill="#120c1f" stroke="#2f2549"/><rect x="40" y="424" width="4" height="64" rx="2" fill="#22d3ee"/>
+      <circle cx="86" cy="456" r="16" fill="#22d3ee" opacity=".18" class="ring"/>
+      <circle cx="86" cy="456" r="7" fill="#22d3ee" opacity=".9"/>
+      <text x="120" y="452" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#f8fafc">Wide angle</text>
+      <text x="120" y="474" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#94a3b8">IMX355 ultra-wide</text>
+      <text x="654" y="460" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#c4b5fd">libs_key_3</text>
+      <path class="tick t4" d="M640 456 l7 8 l15 -19" fill="none" stroke="#22d3ee"
+         stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="soft s5">
+      <rect x="40" y="502" width="640" height="64" rx="15" fill="#120c1f" stroke="#2f2549"/><rect x="40" y="502" width="4" height="64" rx="2" fill="#f0abfc"/>
+      <circle cx="86" cy="534" r="16" fill="#f0abfc" opacity=".18" class="ring"/>
+      <circle cx="86" cy="534" r="7" fill="#f0abfc" opacity=".9"/>
+      <text x="120" y="530" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#f8fafc">Front camera</text>
+      <text x="120" y="552" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#94a3b8">IMX471 selfie</text>
+      <text x="654" y="538" text-anchor="end" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#c4b5fd">libs_key_front</text>
+      <path class="tick t5" d="M640 534 l7 8 l15 -19" fill="none" stroke="#f0abfc"
+         stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  <path class="dash" d="M684 300 H724" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash" d="M684 378 H724" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash" d="M684 456 H724" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/><path class="dash" d="M684 534 H724" stroke="#7c8aa5"
+               stroke-width="2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- the single target file -->
+  <g class="soft s3">
+    <rect x="728" y="268" width="412" height="300" rx="15" fill="#0d1a16" stroke="#2f6b56"/>
+    <text x="756" y="306" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#34d399">Pick this file</text>
+    <rect x="756" y="324" width="356" height="46" rx="11" fill="#0a1712" stroke="#2f6b56"/>
+    <text x="774" y="353" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700"
+          fill="#a7f3d0">Starlight_EOS_R10_DSLR.so</text>
+    <text x="756" y="400" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#94a3b8">It is already in place if you copied it</text>
+    <text x="756" y="420" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#94a3b8">into /sdcard/LMC8.4/libs/</text>
+    <rect x="756" y="438" width="356" height="1" fill="#2f6b56" opacity=".5"/>
+    <text x="756" y="466" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#94a3b8">Do the same for every lens you shoot with.</text>
+    <text x="756" y="486" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#94a3b8">You can leave a lens on Default if you</text>
+    <text x="756" y="506" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#94a3b8">want the stock processing for it.</text>
+    <text x="756" y="536" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#fbbf24">Restart the camera after choosing.</text>
+  </g>
+
+  <rect x="40" y="574" width="1100" height="42" rx="12" fill="#0f0a1c" stroke="#241a3d"/>
+  <text x="62" y="600" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#8b93a7">Optional. The camera works without it — this simply swaps in the Starlight-tuned processing recipe.</text>
+</svg>

@@ -99,7 +99,7 @@ function installGuide() {
     {
       n: '4',
       title: 'Add the DSLR lib',
-      lines: ['Optional: push the .so to', '/sdcard/StarlightCamera/libs/', 'Pick it in Settings → Libs'],
+      lines: ['Optional: push the .so to', '/sdcard/StarlightCamera/libs/', 'Settings → Photo processing → Library'],
       accent: '#f59e0b',
     },
     {
