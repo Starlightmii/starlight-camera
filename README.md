@@ -117,15 +117,17 @@ leaked build:
 
 ## ▶️ Demo
 
-<sub>Real 4K output from the device. Click to play — 3 seconds, 11 MB.</sub>
+<sub>Real 4K output from the device. **Muted** — no audio track at all, so there is
+no background conversation to overhear. Ten seconds, 11 MB.</sub>
 
-**Video (GitHub attachment player):**
+**Silent demo clip (GitHub's native player):**
 
-https://github.com/user-attachments/assets/a52dee76-5ab4-46d5-945c-9c254ca5839a
+https://github.com/user-attachments/assets/fd2f6c26-102b-444d-87c9-b53441eb8a99
 
-<sub>The player above is GitHub's native video player. The MP4 is also committed
-in [`screenshots and video/`](screenshots%20and%20video) if you would rather
-download it and watch it locally.</sub>
+<sub>The video carries **no audio stream whatsoever** — it was stripped with
+`ffmpeg -an`, so no player can emit sound from it. The silent MP4 is also committed
+under [`screenshots and video/`](screenshots%20and%20video) if you would rather
+download it.</sub>
 
 ---
 
@@ -165,6 +167,16 @@ repo. The resolution figures above are from the device test logs in
 | Video | 1920×1080 → **3840×2160** | HEVC or H.264, AAC audio kept, BT.709 |
 
 ---
+
+<img src="assets/setup-manual.svg" width="100%" alt="Manual setup infographic: phone only, no PC, no ADB, no root">
+
+<sub>Prefer pictures? The full manual install, start to finish, in one image. No PC, no ADB, no root — everything is done on the phone.</sub>
+
+---
+
+<img src="assets/install-guide.svg" width="100%" alt="Five step install guide: download, install, import config, add DSLR lib, verify">
+
+<sub>The same five steps, animated.</sub>
 
 ## 🚀 Install
 
@@ -211,6 +223,12 @@ sha256sum Starlight-Camera-vMax.51.apk
 ```
 
 Full list in [`CHECKSUMS.sha256`](https://github.com/Starlightmii/starlight-camera/releases/latest).
+
+---
+
+<img src="assets/config-guide.svg" width="100%" alt="Configuration guide: which settings to change and what each slider does">
+
+<sub>Which settings are worth touching, and what the three sliders actually change.</sub>
 
 ---
 

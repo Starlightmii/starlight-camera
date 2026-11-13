@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1852" viewBox="0 0 1200 1852"
+     role="img" aria-label="Starlight Camera manual setup: phone only, no PC, no ADB, no root">
+  
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0715"/>
+      <stop offset=".5" stop-color="#090612"/>
+      <stop offset="1" stop-color="#0b0715"/>
+    </linearGradient>
+    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#7c8aa5"/>
+    </marker>
+    <style><![CDATA[
+      .trail { stroke-dasharray:6 8; animation: tdash 1.6s linear infinite; }
+      @keyframes tdash { to { stroke-dashoffset:-28 } }
+      .rise { animation: rise 3.4s ease-in-out infinite; }
+      @keyframes rise { 0%,100% { opacity:.62 } 50% { opacity:1 } }
+      .r2 { animation-delay:.3s } .r3 { animation-delay:.6s } .r4 { animation-delay:.9s }
+      .r5 { animation-delay:1.2s } .r6 { animation-delay:1.5s }
+      .r7 { animation-delay:1.8s } .r8 { animation-delay:2.1s }
+      .grow { animation: grow 2.8s ease-out infinite; }
+      @keyframes grow { 0% { transform:scaleX(.15) } 60%,100% { transform:scaleX(1) } }
+      .tick { stroke-dasharray:52; stroke-dashoffset:52; animation: tk 3.2s ease-in-out infinite; }
+      @keyframes tk { 0% { stroke-dashoffset:52 } 45%,78% { stroke-dashoffset:0 } 100% { stroke-dashoffset:52 } }
+      .t2 { animation-delay:.4s } .t3 { animation-delay:.8s } .t4 { animation-delay:1.2s }
+      .t5 { animation-delay:1.6s } .t6 { animation-delay:2s }
+      .sweep { animation: sw 5s ease-in-out infinite; }
+      @keyframes sw { 0% { transform:translateX(-140px) } 100% { transform:translateX(1200px) } }
+      .glow { animation: gl 3.8s ease-in-out infinite; }
+      @keyframes gl { 0%,100% { opacity:.3 } 50% { opacity:.85 } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
+  </defs>
+
+  <rect width="1200" height="1852" rx="24" fill="url(#bgG)"/>
+  <rect x="1" y="1" width="1198" height="1850" rx="23" fill="none" stroke="#241a3d"/>
+
+  <g transform="translate(40 40)">
+    <circle class="glow" cx="34" cy="34" r="34" fill="#a78bfa" opacity=".22"/>
+    <circle cx="34" cy="34" r="24" fill="none" stroke="#a78bfa" stroke-width="3"/>
+    <path class="tick" d="M23 35 l8 9 l16 -20" fill="none" stroke="#34d399"
+          stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="126" y="66" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="34" font-weight="800" fill="#f8fafc">Manual setup</text>
+  <text x="126" y="96" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" fill="#a78bfa">Starlight Camera vMax .51 · Redmi Note 10 Pro Max</text>
+  <text x="126" y="122" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" fill="#8b93a7">Everything below happens on the phone. No PC, no ADB, no root.</text>
+
+  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" font-weight="700">
+    <rect x="852" y="46" width="132" height="34" rx="17" fill="#0f1f18" stroke="#34d399"/>
+    <text x="918" y="68" text-anchor="middle" fill="#a7f3d0">no PC</text>
+    <rect x="996" y="46" width="164" height="34" rx="17" fill="#0f1f18" stroke="#34d399"/>
+    <text x="1078" y="68" text-anchor="middle" fill="#a7f3d0">no ADB, no root</text>
+  </g>
+  <rect x="852" y="92" width="308" height="3" rx="1.5" fill="#241b3d"/>
+  <rect class="sweep" x="852" y="91" width="120" height="5" rx="2.5" fill="url(#sh)"/>
+
+  <text x="40" y="196" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5" font-weight="800" fill="#f8fafc">1 · Get the three files on the phone</text>
+  
+    <g class="rise r1">
+      <rect x="40" y="218" width="360" height="124" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <rect class="glow" x="40" y="218" width="360" height="4" rx="2" fill="#a78bfa"/>
+      <text x="62" y="258" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#a78bfa">132.4 MB · the app</text>
+      <text x="62" y="284" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14"
+            font-weight="700" fill="#f8fafc">Starlight-Camera-vMax.51.apk</text>
+      <text x="62" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#8b93a7">put it in</text>
+      <text x="122" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#cbd5e1">/sdcard/Download/</text>
+    </g>
+    <g class="rise r2">
+      <rect x="424" y="218" width="360" height="124" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <rect class="glow" x="424" y="218" width="360" height="4" rx="2" fill="#34d399"/>
+      <text x="446" y="258" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#34d399">154 KB · the tuning</text>
+      <text x="446" y="284" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14"
+            font-weight="700" fill="#f8fafc">Starlight_Master.xml</text>
+      <text x="446" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#8b93a7">put it in</text>
+      <text x="506" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#cbd5e1">/sdcard/LMC8.4/</text>
+    </g>
+    <g class="rise r3">
+      <rect x="808" y="218" width="360" height="124" rx="15" fill="#120c1f" stroke="#2f2549"/>
+      <rect class="glow" x="808" y="218" width="360" height="4" rx="2" fill="#f59e0b"/>
+      <text x="830" y="258" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#f59e0b">94.5 MB · optional</text>
+      <text x="830" y="284" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14"
+            font-weight="700" fill="#f8fafc">Starlight_EOS_R10_DSLR.so</text>
+      <text x="830" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#8b93a7">put it in</text>
+      <text x="890" y="314" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            font-weight="700" fill="#cbd5e1">/sdcard/LMC8.4/libs/</text>
+    </g>
+
+  <text x="40" y="362" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5" font-weight="800" fill="#f8fafc">2 · Install and configure</text>
+  
+    <g class="rise r1">
+      <rect x="40" y="384" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="40" y="384" width="4" height="152" rx="2" fill="#a78bfa"/>
+      <circle cx="76" cy="420" r="17" fill="#a78bfa" opacity=".2"/>
+      <text x="76" y="426" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#a78bfa">1</text>
+      <text x="104" y="426" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Download all three files</text>
+      <text x="62" y="456" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">On the phone, open the release page in your browser.</text><text x="62" y="477" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Tap each file. They land in /sdcard/Download/.</text><text x="62" y="498" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Nothing else needed — no PC involved.</text>
+      <path class="tick t1" d="M552 512 l7 8 l15 -19"
+            fill="none" stroke="#a78bfa" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r2">
+      <rect x="622" y="384" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="622" y="384" width="4" height="152" rx="2" fill="#22d3ee"/>
+      <circle cx="658" cy="420" r="17" fill="#22d3ee" opacity=".2"/>
+      <text x="658" y="426" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#22d3ee">2</text>
+      <text x="686" y="426" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Remove the old camera</text>
+      <text x="644" y="456" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Settings → Apps → Starlight Camera (or LMC / GCam).</text><text x="644" y="477" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Tap Uninstall. Same package name, so it must go first.</text><text x="644" y="498" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Skip this if no GCam port is installed yet.</text>
+      <path class="tick t2" d="M1134 512 l7 8 l15 -19"
+            fill="none" stroke="#22d3ee" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r3">
+      <rect x="40" y="554" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="40" y="554" width="4" height="152" rx="2" fill="#818cf8"/>
+      <circle cx="76" cy="590" r="17" fill="#818cf8" opacity=".2"/>
+      <text x="76" y="596" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#818cf8">3</text>
+      <text x="104" y="596" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Install the APK</text>
+      <text x="62" y="626" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Open Files → Download → tap the .apk → Install.</text><text x="62" y="647" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">If blocked, allow installs from your file manager.</text><text x="62" y="668" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">No root, no ADB, no developer options.</text>
+      <path class="tick t3" d="M552 682 l7 8 l15 -19"
+            fill="none" stroke="#818cf8" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r4">
+      <rect x="622" y="554" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="622" y="554" width="4" height="152" rx="2" fill="#34d399"/>
+      <circle cx="658" cy="590" r="17" fill="#34d399" opacity=".2"/>
+      <text x="658" y="596" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#34d399">4</text>
+      <text x="686" y="596" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Move the config into place</text>
+      <text x="644" y="626" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Make folders LMC8.4 and StarlightCamera in /sdcard/.</text><text x="644" y="647" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Copy Starlight_Master.xml into both.</text><text x="644" y="668" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Copy the .so into LMC8.4/libs and StarlightCamera/libs.</text>
+      <path class="tick t4" d="M1134 682 l7 8 l15 -19"
+            fill="none" stroke="#34d399" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r1">
+      <rect x="40" y="724" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="40" y="724" width="4" height="152" rx="2" fill="#2dd4bf"/>
+      <circle cx="76" cy="760" r="17" fill="#2dd4bf" opacity=".2"/>
+      <text x="76" y="766" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#2dd4bf">5</text>
+      <text x="104" y="766" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Open it and grant permissions</text>
+      <text x="62" y="796" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Launch Starlight Camera from the app drawer.</text><text x="62" y="817" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Allow Camera, Photos/media, and Microphone.</text><text x="62" y="838" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">You should land on the viewfinder.</text>
+      <path class="tick t5" d="M552 852 l7 8 l15 -19"
+            fill="none" stroke="#2dd4bf" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r2">
+      <rect x="622" y="724" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="622" y="724" width="4" height="152" rx="2" fill="#f0abfc"/>
+      <circle cx="658" cy="760" r="17" fill="#f0abfc" opacity=".2"/>
+      <text x="658" y="766" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#f0abfc">6</text>
+      <text x="686" y="766" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Import the config</text>
+      <text x="644" y="796" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Double-tap the black area beside the shutter.</text><text x="644" y="817" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Tap IMPORT, go to /sdcard/LMC8.4/, pick the XML.</text><text x="644" y="838" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">The app restarts itself with tuned settings.</text>
+      <path class="tick t6" d="M1134 852 l7 8 l15 -19"
+            fill="none" stroke="#f0abfc" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r3">
+      <rect x="40" y="894" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="40" y="894" width="4" height="152" rx="2" fill="#f59e0b"/>
+      <circle cx="76" cy="930" r="17" fill="#f59e0b" opacity=".2"/>
+      <text x="76" y="936" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#f59e0b">7</text>
+      <text x="104" y="936" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Pick the DSLR library (optional)</text>
+      <text x="62" y="966" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Settings → Libs. Set libs_key to -1.</text><text x="62" y="987" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Set pref_libs_fromdir_key to Starlight_EOS_R10_DSLR.so.</text><text x="62" y="1008" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Restart the camera so the library loads.</text>
+      <path class="tick t1" d="M552 1022 l7 8 l15 -19"
+            fill="none" stroke="#f59e0b" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="rise r4">
+      <rect x="622" y="894" width="558" height="152" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="622" y="894" width="4" height="152" rx="2" fill="#ec4899"/>
+      <circle cx="658" cy="930" r="17" fill="#ec4899" opacity=".2"/>
+      <text x="658" y="936" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#ec4899">8</text>
+      <text x="686" y="936" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16.5"
+            font-weight="700" fill="#f8fafc">Turn on the good stuff</text>
+      <text x="644" y="966" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Settings → Starlight Camera: auto upscale ON.</text><text x="644" y="987" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Video upscale ON when you want 4K. Potato mode if slow.</text><text x="644" y="1008" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Shoot. Enhanced copies save next to the originals.</text>
+      <path class="tick t2" d="M1134 1022 l7 8 l15 -19"
+            fill="none" stroke="#ec4899" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+  <text x="40" y="1046" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5" font-weight="800" fill="#f8fafc">3 · Tune it</text>
+  
+    <rect x="40" y="1064" width="536" height="336" rx="16" fill="#120c1f" stroke="#2a1f45"/>
+    <text x="64" y="1096" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5"
+          font-weight="800" fill="#a78bfa">Settings → Starlight Camera</text>
+    
+    <g class="rise r1">
+      <text x="72" y="1126" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Auto upscale</text>
+      <rect x="380" y="1114" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1114" width="34" height="20" rx="10" fill="#a78bfa" opacity=".85"/>
+      <text x="512" y="1129" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#a78bfa">ON</text>
+    </g>
+    <g class="rise r2">
+      <text x="72" y="1170" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Upscale button</text>
+      <rect x="380" y="1158" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1158" width="34" height="20" rx="10" fill="#22d3ee" opacity=".85"/>
+      <text x="512" y="1173" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#22d3ee">ON</text>
+    </g>
+    <g class="rise r3">
+      <text x="72" y="1214" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Video upscale</text>
+      <rect x="380" y="1202" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1202" width="83" height="20" rx="10" fill="#f0abfc" opacity=".85"/>
+      <text x="512" y="1217" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#f0abfc">ON for 4K</text>
+    </g>
+    <g class="rise r4">
+      <text x="72" y="1258" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Hardware acceleration</text>
+      <rect x="380" y="1246" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1246" width="34" height="20" rx="10" fill="#34d399" opacity=".85"/>
+      <text x="512" y="1261" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#34d399">ON</text>
+    </g>
+    <g class="rise r1">
+      <text x="72" y="1302" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Potato mode</text>
+      <rect x="380" y="1290" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1290" width="125" height="20" rx="10" fill="#f59e0b" opacity=".85"/>
+      <text x="512" y="1305" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#f59e0b">OFF unless slow</text>
+    </g>
+    <g class="rise r2">
+      <text x="72" y="1346" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Media opener</text>
+      <rect x="380" y="1334" width="118" height="20" rx="10" fill="#241b3d"/>
+      <rect x="380" y="1334" width="104" height="20" rx="10" fill="#f472b6" opacity=".85"/>
+      <text x="512" y="1349" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            font-weight="700" fill="#f472b6">Your gallery</text>
+    </g>
+
+    <rect x="596" y="1064" width="564" height="336" rx="16" fill="#0d1a16" stroke="#2f6b56"/>
+    <text x="620" y="1096" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5"
+          font-weight="800" fill="#34d399">The three sliders</text>
+    <text x="620" y="1116" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">Off on all three is a true bypass.</text>
+    
+    <g class="rise r2">
+      <text x="620" y="1126" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#f8fafc">Denoise</text>
+      <rect x="620" y="1138" width="300" height="9" rx="4.5" fill="#241b3d"/>
+      <rect x="620" y="1138" width="150" height="9" rx="4.5" fill="#60a5fa">
+        <animate attributeName="width" values="0;150" dur="2.8s" begin="0.3s" fill="freeze"/>
+      </rect>
+      <text x="620" y="1166" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">low by day</text>
+    </g>
+    <g class="rise r3">
+      <text x="620" y="1202" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#f8fafc">Detail</text>
+      <rect x="620" y="1214" width="300" height="9" rx="4.5" fill="#241b3d"/>
+      <rect x="620" y="1214" width="180" height="9" rx="4.5" fill="#34d399">
+        <animate attributeName="width" values="0;180" dur="2.8s" begin="0.3s" fill="freeze"/>
+      </rect>
+      <text x="620" y="1242" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">medium is safe</text>
+    </g>
+    <g class="rise r4">
+      <text x="620" y="1278" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13.5"
+            font-weight="700" fill="#f8fafc">Sharpen</text>
+      <rect x="620" y="1290" width="300" height="9" rx="4.5" fill="#241b3d"/>
+      <rect x="620" y="1290" width="110" height="9" rx="4.5" fill="#f472b6">
+        <animate attributeName="width" values="0;110" dur="2.8s" begin="0.3s" fill="freeze"/>
+      </rect>
+      <text x="620" y="1318" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#8b93a7">low for faces</text>
+    </g>
+
+  
+    <rect x="40" y="1424" width="1120" height="188" rx="16" fill="#0f0a1c" stroke="#241a3d"/>
+    <text x="66" y="1456" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5"
+          font-weight="800" fill="#f0abfc">Where things end up</text>
+    
+      <text x="66" y="1486" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            fill="#7dd3fc">/sdcard/DCIM/Camera/</text>
+      <text x="66" y="1502" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            fill="#8b93a7">your shots and enhanced copies</text>
+      <text x="66" y="1520" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            fill="#7dd3fc">/sdcard/LMC8.4/Starlight_Master.xml</text>
+      <text x="66" y="1536" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            fill="#8b93a7">the config you imported</text>
+      <text x="66" y="1554" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            fill="#7dd3fc">/sdcard/LMC8.4/libs/</text>
+      <text x="66" y="1570" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            fill="#8b93a7">the DSLR library</text>
+      <text x="66" y="1588" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5"
+            fill="#7dd3fc">/sdcard/Android/data/com.google.android.GoogleCameraLMCR17/files/starlight/</text>
+      <text x="66" y="1604" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12"
+            fill="#8b93a7">logs, if you need them</text>
+  
+    <rect x="40" y="1600" width="1120" height="202" rx="16"
+          fill="#1a0f14" stroke="#5b2b3a"/>
+    <text x="66" y="1632" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="15.5"
+          font-weight="800" fill="#fca5a5">When it misbehaves</text>
+    
+      <text x="66" y="1660" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Will not install</text>
+      <text x="66" y="1677" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">uninstall the old LMC / GCam first</text>
+      <text x="638" y="1660" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Config does not load</text>
+      <text x="638" y="1677" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">XML must sit in /sdcard/LMC8.4/, then double-tap → IMPORT</text>
+      <text x="66" y="1706" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Upscale does nothing</text>
+      <text x="66" y="1723" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">auto upscale must be ON in Settings</text>
+      <text x="638" y="1706" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Video upscale fails</text>
+      <text x="638" y="1723" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">keep 1.5× the output size free; avoid 10-bit HDR sources</text>
+      <text x="66" y="1752" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Preview tap is dead</text>
+      <text x="66" y="1769" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">pick a media opener app in Settings</text>
+      <text x="638" y="1752" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13"
+            font-weight="700" fill="#fecaca">Crashes on launch</text>
+      <text x="638" y="1769" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#c4a0a8">Settings → Apps → Clear Data, then reopen</text>
+
+  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#6b7280">
+    <text x="40" y="1826">Unofficial mod built on Google Camera and LMC 8.4 R17 · processing is entirely on-device, nothing is uploaded</text>
+  </g>
+</svg>

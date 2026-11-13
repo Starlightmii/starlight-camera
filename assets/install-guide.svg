@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="380" viewBox="0 0 1140 380"
+     role="img" aria-label="Five step install guide for Starlight Camera">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#7c8aa5"/>
+    </marker>
+    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#f0abfc" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="rail"><rect x="40" y="96" width="1060" height="4" rx="2"/></clipPath>
+    <style><![CDATA[
+      .trail { stroke-dasharray:7 9; animation: trail 1.5s linear infinite; }
+      @keyframes trail { to { stroke-dashoffset:-32 } }
+      .step  { animation: breathe 3s ease-in-out infinite; }
+      @keyframes breathe { 0%,100% { opacity:.6 } 50% { opacity:1 } }
+      .s2 { animation-delay:.35s } .s3 { animation-delay:.7s }
+      .s4 { animation-delay:1.05s } .s5 { animation-delay:1.4s }
+      .pop  { animation: pop 2.6s ease-in-out infinite; }
+      @keyframes pop { 0%,100% { transform:scale(1) } 50% { transform:scale(1.06) } }
+      .p2 { animation-delay:.4s } .p3 { animation-delay:.8s } .p4 { animation-delay:1.2s }
+      .sweep { animation: sweep 4.6s ease-in-out infinite; }
+      @keyframes sweep { 0% { transform:translateX(0); opacity:0 }
+                         12% { opacity:1 } 88% { opacity:1 } 100% { transform:translateX(940px); opacity:0 } }
+      .tick { stroke-dasharray:48; stroke-dashoffset:48; animation: tick 3s ease-in-out infinite; }
+      @keyframes tick { 0% { stroke-dashoffset:48 } 45%,75% { stroke-dashoffset:0 } 100% { stroke-dashoffset:48 } }
+      .k2 { animation-delay:.5s } .k3 { animation-delay:1s } .k4 { animation-delay:1.5s }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }]]></style>
+  </defs>
+
+  <rect width="1140" height="380" rx="22" fill="#0a0713"/>
+  <rect x="1" y="1" width="1138" height="378" rx="21" fill="none" stroke="#241a3d"/>
+
+  <text x="40" y="46" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="24" font-weight="800" fill="#f8fafc">Install in five steps</text>
+  <text x="40" y="72" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" fill="#8b93a7">About two minutes. No root, no account, no PC required.</text>
+
+  <rect x="40" y="96" width="1060" height="4" rx="2" fill="#241b3d"/>
+  <g clip-path="url(#rail)"><rect class="sweep" x="40" y="94" width="120" height="8" rx="4" fill="url(#sh)"/></g>
+
+  
+    <g class="step s1">
+      <rect x="40" y="118" width="196" height="196" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="40" y="118" width="196" height="4" rx="2" fill="#a78bfa" opacity=".85"/>
+      <circle cx="70" cy="158" r="16" fill="#a78bfa" opacity=".18"/>
+      <text x="70" y="164" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#a78bfa">1</text>
+      <text x="98" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
+            font-weight="700" fill="#f8fafc">Download the APK</text>
+      <text x="60" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">From Releases, grab</text><text x="60" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Starlight-Camera-vMax.51.apk</text><text x="60" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">(132.4 MB, arm64-v8a)</text>
+      <path class="tick k1" d="M192 288 l7 8 l14 -18"
+            fill="none" stroke="#a78bfa" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g><path class="trail" d="M239 216 H251" stroke="#7c8aa5"
+                 stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+    <g class="step s2">
+      <rect x="256" y="118" width="196" height="196" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="256" y="118" width="196" height="4" rx="2" fill="#22d3ee" opacity=".85"/>
+      <circle cx="286" cy="158" r="16" fill="#22d3ee" opacity=".18"/>
+      <text x="286" y="164" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#22d3ee">2</text>
+      <text x="314" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
+            font-weight="700" fill="#f8fafc">Install it</text>
+      <text x="276" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Tap the APK, or run</text><text x="276" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">adb install Starlight-Camera-vMax.51.apk</text><text x="276" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">No root, no Magisk</text>
+      <path class="tick k2" d="M408 288 l7 8 l14 -18"
+            fill="none" stroke="#22d3ee" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g><path class="trail" d="M455 216 H467" stroke="#7c8aa5"
+                 stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+    <g class="step s3">
+      <rect x="472" y="118" width="196" height="196" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="472" y="118" width="196" height="4" rx="2" fill="#34d399" opacity=".85"/>
+      <circle cx="502" cy="158" r="16" fill="#34d399" opacity=".18"/>
+      <text x="502" y="164" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#34d399">3</text>
+      <text x="530" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
+            font-weight="700" fill="#f8fafc">Import the config</text>
+      <text x="492" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Double-tap black near shutter</text><text x="492" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">→ IMPORT → Starlight_Master.xml</text><text x="492" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">App restarts, tuned</text>
+      <path class="tick k3" d="M624 288 l7 8 l14 -18"
+            fill="none" stroke="#34d399" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g><path class="trail" d="M671 216 H683" stroke="#7c8aa5"
+                 stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+    <g class="step s4">
+      <rect x="688" y="118" width="196" height="196" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="688" y="118" width="196" height="4" rx="2" fill="#f59e0b" opacity=".85"/>
+      <circle cx="718" cy="158" r="16" fill="#f59e0b" opacity=".18"/>
+      <text x="718" y="164" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#f59e0b">4</text>
+      <text x="746" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
+            font-weight="700" fill="#f8fafc">Add the DSLR lib</text>
+      <text x="708" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Optional: push the .so to</text><text x="708" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">/sdcard/StarlightCamera/libs/</text><text x="708" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Pick it in Settings → Libs</text>
+      <path class="tick k4" d="M840 288 l7 8 l14 -18"
+            fill="none" stroke="#f59e0b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g><path class="trail" d="M887 216 H899" stroke="#7c8aa5"
+                 stroke-width="2.2" fill="none" marker-end="url(#ar)"/>
+    <g class="step s5">
+      <rect x="904" y="118" width="196" height="196" rx="15" fill="#130d22" stroke="#332a52"/>
+      <rect x="904" y="118" width="196" height="4" rx="2" fill="#ec4899" opacity=".85"/>
+      <circle cx="934" cy="158" r="16" fill="#ec4899" opacity=".18"/>
+      <text x="934" y="164" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
+            font-size="16" font-weight="800" fill="#ec4899">5</text>
+      <text x="962" y="164" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="16"
+            font-weight="700" fill="#f8fafc">Verify checksum</text>
+      <text x="924" y="194" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">sha256sum the APK and</text><text x="924" y="215" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">compare with CHECKSUMS.sha256</text><text x="924" y="236" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#94a3b8">Then shoot something</text>
+      <path class="tick k5" d="M1056 288 l7 8 l14 -18"
+            fill="none" stroke="#ec4899" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+  <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" fill="#8b93a7">
+    <text x="40" y="348">⚠️ Package name is unchanged, so this replaces an existing LMC install rather than sitting beside it.</text>
+  </g>
+</svg>
