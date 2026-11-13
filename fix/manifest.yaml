@@ -1,0 +1,187 @@
+fix_id: starlight-camera-vmax
+name: "Starlight Camera vMax — Gemini two-pass video, slider range, branding"
+rom: coloros
+component: camera
+severity: feature
+status: device-tested
+registration_status: staged
+version: "vMax (versionCode 64764922)"
+date: "2026-11-12"
+updated: "2026-11-13"
+
+purpose: >-
+  Experimental maximum-quality successor to starlight-camera-upscale. Keeps the
+  v2.0 Tensei-parity default pipeline and adds a selectable max photo path
+  (GPU tile readback + Lanczos3 fallback, exact Tensei colour matrix,
+  edge-gated unsharp, JPEG q98, 40 MP cap), a hardware video super-resolution
+  path (H.264 4K + re-encoded AAC clipped to the video), potato mode,
+  capability-probed video tiers, thermal pacing, a foreground service, a
+  separate `:sr` video process, an animated rainbow progress bar, a ColorOS
+  live-alert progress notification, and a fixed preview opener.
+
+background:
+  v2_baseline: >-
+    v2.0 is user-confirmed working; its default photo path is the Tensei
+    pipeline (Canvas/RenderScript bicubic, saturation/contrast 1.15, cross
+    kernel [0,-1,0,-1,5,-1,0,-1,0], 24 MP cap, JPEG q98). vMax leaves that path
+    intact as the "default" photo-quality option.
+  tensei_finding: >-
+    Tensei is not an AI upscaler. It has no model assets and no TFLite/ONNX/
+    NCNN/MNN runtime. See agents/results/lmc84-upscale-v2/TENSEI_ANALYSIS.md.
+  limitations: >-
+    No real ML super-resolution model, NDK/Vulkan path, or 4:4:4 JPEG encoder is
+    present. Skia JPEG q98 remains 4:2:0. Video uses hardware MediaCodec
+    decode/encode with a two-pass GPU OES pipeline (temporal/chroma clean then
+    directional de-blur/dual-band/IGN). HDR/10-bit is skipped. Media3 migration
+    is not implemented because the APK has no androidx.media3 dependency.
+
+payload:
+  apk:
+    path: agents/results/lmc84-upscale-vMax/artifacts/Starlight-Camera-vMax.49.apk
+    device_copy: /sdcard/Download/Starlight-Camera-vMax.apk
+    size: 138880279
+    sha256: f81eaf7a31c283d4872a26a243e09dbbc3f136933ec4c79162bcea00594ebce5
+    package: com.google.android.GoogleCameraLMCR17
+    versionCode: 64764922
+    versionName: 8.4.300.414775575.49-vMax
+    min_sdk: 29
+    target_sdk: 29
+    signer_dn: "CN=Starlight Ports, OU=Ports, O=Starlight, C=IN"
+    signer_sha256: 336216067dec61462cd9936403e1d75cea51e94f89a6a8742abec359b023b574
+    classes4_dex_sha256: 165aa747881feaffb64d0a8ee205c865473b1c8c6545dc5400fa62c5b9dc3ac1
+  config:
+    path: roms/coloros/fixes/starlight-camera-vmax/files/Starlight_Master.xml
+    staged_copy: agents/results/lmc84-upscale-vMax/artifacts/Starlight_Master.xml
+    sha256: 00da9b0fe696935bc80082a87ba5f3846dc302ad65527c9456d07b89679278d8
+  source:
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightProvider.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightSR.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightSRDefault.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightVideoSR.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightVideoReceiver.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightProgressNotifier.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightGL.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightVideoGL.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightVideoTranscoder.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightProcessingBar.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightLog.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightPolicy.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightCapabilities.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightJobService.java
+    - agents/results/lmc84-upscale-vMax/src/com/starlight/camera/StarlightSrService.java
+  screenshots:
+    - agents/results/lmc84-upscale-vMax/screenshots/2026-11-12-1832-settings-potato-v34.png
+    - agents/results/lmc84-upscale-vMax/screenshots/2026-11-12-1833-settings-default-v34.png
+    - agents/results/lmc84-upscale-vMax/screenshots/2026-11-12-1850-photo-24mp-v34.jpg
+    - agents/results/lmc84-upscale-vMax/screenshots/2026-11-12-1757-photo-40mp-v31-thumb.jpg
+  patches:
+    - agents/results/lmc84-upscale-vMax/patches/Starlight_Master.v2-to-vMax.diff
+    - agents/results/lmc84-upscale-vMax/patches/StarlightProvider.v2-to-vMax.diff
+    - agents/results/lmc84-upscale-vMax/patches/StarlightSR.v2-to-vMax.diff
+
+changes:
+  photo_quality:
+    setting: pref_starlight_photo_quality_key
+    values: [default, max]
+    ui: "Photo upscale range (ListPreference)"
+    default_behavior: "StarlightSRDefault: v2/Tensei pipeline, 24 MP, JPEG q98"
+    max_behavior: "StarlightSR: GPU tiled readback + Lanczos3 fallback, 40 MP, JPEG q98, EXIF"
+  photo_tiling:
+    tile: "1024 px fixed FBO, Canvas composite"
+    verified: "24 MP 5657x4243; 40 MP 7302x5476; no seams"
+  photo_auto_upscale:
+    behavior: "when ON, auto-upscale deletes the source JPEG after the upscaled file exists; hold-to-process keeps it"
+    verified: "Photo_20261112_184906_Starlight.jpg -> Upscaled_Night_20261112_184906.jpg only"
+    guard: "source is deleted only after the expected Upscaled_<stem>.jpg exists"
+  potato_mode:
+    setting: pref_starlight_potato_key
+    photo: "16 MP cap, 2x, JPEG 95, sharpen 0.10"
+    video: "1080p30, bitrate <=10 Mbps, sharpen 0.08; auto video disabled"
+    verified: "Upscaled_Night_20261112_182619.jpg 3464x4618 (16.0 MP); 720p -> 1080p video"
+  video_tier:
+    setting: pref_starlight_video_tier_key
+    values: [auto, 1080, 1440, 2160, off]
+    capability_probe: "picks hardware encoder and highest supported output edge (3840/2560/1920/1280)"
+    verified: "auto -> 4K; potato -> 1080p; non-integer 720p->1080p target works"
+  thermal_pacing:
+    behavior: "MODERATE 40 ms, SEVERE 150 ms, CRITICAL abort; power-save 25 ms; storage rechecked every 10 s"
+  foreground_service:
+    photo: "StarlightJobService, dataSync FGS"
+    video: "StarlightSrService in :sr process"
+    verified: "ps showed com.google.android.GoogleCameraLMCR17:sr during VIDEO_SR"
+  diagnostics:
+    log: "starlight/starlight.log in app external files, 512 KiB rolling"
+    exit_reasons: "ApplicationExitInfo dumped on a background thread; ANR/native traces saved"
+  video:
+    setting: pref_starlight_video_upscale_key
+    default: "0"
+    button: "Same star chip, labels V2x in video mode; tap toggles, hold processes latest video"
+    output: "Upscaled_Video_<timestamp>.mp4, H.264, AAC re-encoded and clipped to video end"
+    limits: "auto probe <= 3840x2160 and <= 8.3 MP; no 720-frame cap; HDR skipped"
+  progress:
+    bar: "animated rainbow 6 dp bar, 20 dp side margins, 36 dp bottom margin"
+    notification: "silent ongoing starlight_sr_progress channel (ColorOS live-alert best effort)"
+  preview_opener:
+    fix: "app:id/thumbnail_button touch interceptor opens the selected gallery/opener; installed once per view, no 700 ms listener churn; performClick + contentDescription"
+    verified: "tap opened com.google.android.apps.photos/.pager.HostPhotoPagerActivity"
+  debug_receiver:
+    component: com.google.android.GoogleCameraLMCR17/com.starlight.camera.StarlightVideoReceiver
+    actions:
+      - com.starlight.camera.DEBUG_ENABLE
+      - com.starlight.camera.DEBUG_UPSCALE
+      - com.starlight.camera.DEBUG_DEFAULT
+      - com.starlight.camera.DEBUG_MAX
+      - com.starlight.camera.VIDEO_SR
+    extra: "VIDEO_SR accepts --es path <absolute video path>; routed to :sr"
+
+  gemini_video:
+    renderer: "Pass 1 temporal + chroma bilateral; Pass 2 directional de-blur + dual-band + IGN"
+    cadence: "1 output frame per source frame; 2x interpolation disabled"
+    color: "BT.709/full/SDR forced on encoder and muxer; luma-only gain; no saturation"
+    sliders: "denoise -> 0.90*temporal + chroma mix; sharpen -> 1.25*deblur; detail -> 1.35*fine + 0.60*clarity; Off is truly zero"
+    verified: ".49 Off/Default/Max: Laplacian variance 510 / 869 / 1543; Max vs Off SSIM 0.9601, PSNR 31.73 dB; 30/30/30 frames, HEVC/AAC, BT.709; Off 6,060,319, Default 6,010,398, Max 6,227,918 bytes"
+  branding:
+    strings: "all values*/strings.xml LMC8.4/LMC replaced with Starlight"
+    paths: "/LMC8.4/ -> /StarlightCamera/ in smali"
+    package: "com.google.android.GoogleCameraLMCR17 unchanged by design"
+
+verification:
+  build:
+    - "javac -source 8 -target 8 -> 0"
+    - "d8 --min-api 29 -> 0"
+    - "zipalign -f -p 4 -> 0"
+    - "apksigner sign -> 0"
+    - "aapt2 badging -> versionCode 64764922, versionName 8.4.300.414775575.49-vMax"
+  photo_default:
+    output: "Upscaled_Night_20261112_184906.jpg"
+    size: "4243x5657 (~24 MP), 11.5 MB"
+  photo_max:
+    output: "Upscaled_Night_20261112_175645.jpg"
+    size: "7302x5476 (~40 MP), 11.8 MB"
+  photo_potato:
+    output: "Upscaled_Night_20261112_182619.jpg"
+    size: "3464x4618 (~16 MP), 4.2 MB"
+  photo_auto:
+    output: "Upscaled_Night_20261112_184906.jpg only; source removed"
+  photo_hold:
+    output: "Person_20261112_175956_Starlight.jpg + Upscaled_Person_20261112_175956.jpg both kept; deleteOriginal=false"
+  video:
+    normal: "1920x1080 -> 1920x1080, 30 frames, 30fps, 6,035,031 bytes"
+    potato: "1280x720 -> 1920x1080, 34 frames, 1.467 s, is_pending=0"
+    sr_process: "com.google.android.GoogleCameraLMCR17:sr observed during processing"
+    pipeline: "MediaExtractor -> hardware MediaCodec decoder -> SurfaceTexture/OES -> StarlightVideoGL -> hardware encoder Surface -> MediaMuxer -> MediaStore IS_PENDING"
+  launch:
+    method: "am force-stop; am start -W CameraLauncher"
+    result: "Status ok, COLD, TotalTime 1874 ms; no new app ANR"
+  preview:
+    method: "tap thumbnail"
+    result: "topResumedActivity=com.google.android.apps.photos/.pager.HostPhotoPagerActivity"
+  settings:
+    method: "screencap Settings -> Starlight Camera"
+    result: "Potato mode, Video upscale tier, Delete original, renamed photo range and hardware summary visible"
+
+rollback:
+  previous_fix: fixes/starlight-camera-upscale
+  previous_apk: agents/results/lmc84-upscale-v2/artifacts/Starlight-Camera-v2.0.apk
+  archive: /home/starlight/lmc_archive/ (v31-v37 APKs)
+  note: "Uninstall vMax and install the v2.0 APK if the max path is unstable."

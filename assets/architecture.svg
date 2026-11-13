@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" role="img" aria-label="Starlight Camera pipeline">
+  <defs>
+    <linearGradient id="p1" x1="0" x2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+    <linearGradient id="p2" x1="0" x2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="470" rx="22" fill="#0a0713" stroke="#241a3d"/>
+  <text x="36" y="48" font-family="Inter,Segoe UI,sans-serif" font-size="24" font-weight="800" fill="#f8fafc">Photo &amp; video pipeline</text>
+
+  <text x="36" y="92" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#a78bfa">PHOTO</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="15" fill="#e2e8f0">
+    <rect x="36" y="104" width="180" height="64" rx="12" fill="#171029" stroke="#4c3a7a"/>
+    <text x="52" y="130" font-weight="600">GCam capture</text><text x="52" y="152" fill="#94a3b8" font-size="13">JPEG / DNG / RAW</text>
+
+    <rect x="256" y="104" width="196" height="64" rx="12" fill="#171029" stroke="#4c3a7a"/>
+    <text x="272" y="130" font-weight="600">StarlightSR</text><text x="272" y="152" fill="#94a3b8" font-size="13">tiled GPU readback</text>
+
+    <rect x="492" y="104" width="196" height="64" rx="12" fill="#171029" stroke="#4c3a7a"/>
+    <text x="508" y="130" font-weight="600">Lanczos3 fallback</text><text x="508" y="152" fill="#94a3b8" font-size="13">Tensei colour + unsharp</text>
+
+    <rect x="728" y="104" width="180" height="64" rx="12" fill="#0f1f18" stroke="#34d399"/>
+    <text x="744" y="130" font-weight="600">24 / 40 MP out</text><text x="744" y="152" fill="#6ee7b7" font-size="13">JPEG q98 · EXIF fixed</text>
+
+    <rect x="948" y="104" width="116" height="64" rx="12" fill="#0f1f18" stroke="#34d399"/>
+    <text x="966" y="130" font-weight="600">MediaStore</text><text x="966" y="152" fill="#6ee7b7" font-size="13">_Starlight</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" marker-end="url(#ar)" fill="none">
+    <path d="M216 136 H252"/><path d="M452 136 H488"/><path d="M688 136 H724"/><path d="M908 136 H944"/>
+  </g>
+
+  <text x="36" y="222" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#34d399">VIDEO</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="15" fill="#e2e8f0">
+    <rect x="36" y="234" width="170" height="64" rx="12" fill="#0d1a16" stroke="#2f6b56"/>
+    <text x="52" y="260" font-weight="600">MediaCodec</text><text x="52" y="282" fill="#94a3b8" font-size="13">hardware decode</text>
+
+    <rect x="240" y="234" width="212" height="64" rx="12" fill="#0d1a16" stroke="#2f6b56"/>
+    <text x="256" y="260" font-weight="600">Pass 1 · temporal</text><text x="256" y="282" fill="#94a3b8" font-size="13">chroma bilateral, BT.709</text>
+
+    <rect x="486" y="234" width="212" height="64" rx="12" fill="#0d1a16" stroke="#2f6b56"/>
+    <text x="502" y="260" font-weight="600">Pass 2 · detail</text><text x="502" y="282" fill="#94a3b8" font-size="13">de-blur, dual-band, IGN</text>
+
+    <rect x="732" y="234" width="176" height="64" rx="12" fill="#0f1f18" stroke="#34d399"/>
+    <text x="748" y="260" font-weight="600">1:1 cadence</text><text x="748" y="282" fill="#6ee7b7" font-size="13">no frame blending</text>
+
+    <rect x="942" y="234" width="122" height="64" rx="12" fill="#0f1f18" stroke="#34d399"/>
+    <text x="958" y="260" font-weight="600">4K / 1080p</text><text x="958" y="282" fill="#6ee7b7" font-size="13">AAC kept</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" marker-end="url(#ar)" fill="none">
+    <path d="M206 266 H236"/><path d="M452 266 H482"/><path d="M698 266 H728"/><path d="M908 266 H938"/>
+  </g>
+
+  <rect x="36" y="330" width="1028" height="112" rx="14" fill="#120c1f" stroke="#2a1f45"/>
+  <text x="56" y="358" font-family="Inter,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#f0abfc">Controls &amp; safety</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="14" fill="#cbd5e1">
+    <text x="56" y="386">🎛️ Denoise / Detail / Sharpen — full range, Off is truly zero</text>
+    <text x="56" y="410">🥔 Potato mode — 16 MP, 1080p30, lower bitrate</text>
+    <text x="56" y="434">📊 Rolling starlight.log + exit-reason dump · separate :sr process · thermal pacing</text>
+    <text x="640" y="386">🧠 Capability probe picks the video tier</text>
+    <text x="640" y="410">🔔 Foreground service + progress notification</text>
+    <text x="640" y="434">🏷️ Person_ / Night_ / Macro_ … _Starlight</text>
+  </g>
+</svg>

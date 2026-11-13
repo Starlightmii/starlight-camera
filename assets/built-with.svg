@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120" role="img" aria-label="Built on Google Camera and LMC 8.4">
+  <rect width="900" height="120" rx="20" fill="#0b0714" stroke="#2a1f45"/>
+  <text x="32" y="38" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700" fill="#a78bfa">BUILT ON</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="20" fill="#e2e8f0">
+    <rect x="32" y="52" width="256" height="46" rx="12" fill="#151024" stroke="#3b2f5e"/>
+    <text x="52" y="82" font-weight="600">Google Camera (GCam)</text>
+    <rect x="304" y="52" width="216" height="46" rx="12" fill="#151024" stroke="#3b2f5e"/>
+    <text x="324" y="82" font-weight="600">LMC 8.4 R17</text>
+    <rect x="536" y="52" width="332" height="46" rx="12" fill="#0f1f18" stroke="#34d399"/>
+    <text x="556" y="82" font-weight="600" fill="#a7f3d0">Starlight mods, config &amp; DSLR lib</text>
+  </g>
+</svg>

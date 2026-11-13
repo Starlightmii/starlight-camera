@@ -1,0 +1,7 @@
+artifacts/
+fix/files/
+libs/*.so
+*.apk
+*.idsig
+*.log
+*.tmp

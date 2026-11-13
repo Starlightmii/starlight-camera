@@ -1,0 +1,20 @@
+--- lmc84-upscale-v2/artifacts/Starlight_Master.xml	2026-11-12 12:01:00.755217941 +0530
++++ lmc84-upscale-vMax/artifacts/Starlight_Master.xml	2026-11-12 15:10:33.435604356 +0530
+@@ -994,7 +994,7 @@
+     <string name="lib_gainthreshold_pro_key">0</string>
+     <string name="lib_smoothness_key_2">E003271E</string>
+     <string name="lib_smoothness_key_5">0</string>
+-    <string name="pref_camera_raw_output_key">0</string>
++    <string name="pref_camera_raw_output_key">1</string>
+     <string name="lib_smoothness_key_4">E003271E</string>
+     <string name="lib_hightlight2_pro_key">0</string>
+     <string name="lib_brightn_key_front">0</string>
+@@ -2846,6 +2846,8 @@
+     <string name="pref_opmode_night_key">32778</string>
+     <string name="pref_starlight_smartname_key">1</string>
+     <string name="pref_starlight_upscale_key">1</string>
++    <string name="pref_starlight_video_upscale_key">0</string>
++    <string name="pref_starlight_photo_quality_key">default</string>
+     <string name="pref_starlight_upscale_scale_value_key">2</string>
+     <string name="pref_starlight_upscale_button_key">1</string>
+     <string name="pref_starlight_overlay_key">1</string>

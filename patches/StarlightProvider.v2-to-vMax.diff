@@ -1,0 +1,436 @@
+--- lmc84-upscale-v2/src/StarlightProvider.java	2026-11-12 12:01:00.756390439 +0530
++++ lmc84-upscale-vMax/src/StarlightProvider.java	2026-11-12 15:10:33.436655153 +0530
+@@ -7,6 +7,7 @@
+ import android.app.Application;
+ import android.content.ContentProvider;
+ import android.content.ContentResolver;
++import android.content.ContentUris;
+ import android.content.ContentValues;
+ import android.content.Context;
+ import android.content.Intent;
+@@ -103,10 +104,15 @@
+     private static final String PREF_UPSCALE_BUTTON = "pref_starlight_upscale_button_key";
+     private static final String PREF_UPSCALE_SCALE = "pref_starlight_upscale_scale_value_key";
+     private static final String PREF_UPSCALE_SCALE_LEGACY = "pref_starlight_upscale_scale_key";
++    private static final String PREF_VIDEO_UPSCALE = "pref_starlight_video_upscale_key";
++    private static final String PREF_PHOTO_QUALITY = "pref_starlight_photo_quality_key";
+     private static final String TAG = "StarlightCam";
+-    private static final int UPSCALE_JPEG_QUALITY = 98;
+-    private static final int UPSCALE_MAX_PIXELS = 24000000;
++    private static final int UPSCALE_JPEG_QUALITY = 100;
++    private static final int UPSCALE_MAX_PIXELS = 40000000;
++    private static final int UPSCALE_DEFAULT_MAX_PIXELS = 24000000;
+     private static Context sCtx;
++    private static volatile boolean sPhotoProcessing = false;
++    private static volatile int sPhotoProgress = 0;
+     private static long[] sLastCpu;
+     private static Toast sScaleToast;
+     private long lastCpuSet = 0;
+@@ -129,6 +135,7 @@
+         }
+         sCtx = context.getApplicationContext();
+         migrateUpscaleScale(context);
++        migrateBooleanPrefs(context);
+         this.mainHandler = new Handler(Looper.getMainLooper());
+         this.worker = new HandlerThread("starlight-cam");
+         this.worker.start();
+@@ -462,23 +469,32 @@
+             textViewMakeChip.setOnClickListener(new View.OnClickListener() { // from class: com.starlight.camera.StarlightProvider.2
+                 @Override // android.view.View.OnClickListener
+                 public void onClick(View view6) {
+-                    boolean zPrefBool = StarlightProvider.prefBool(activity, StarlightProvider.PREF_UPSCALE, false);
++                    boolean video = StarlightProvider.isVideoMode(viewGroup);
++                    String key = video ? StarlightProvider.PREF_VIDEO_UPSCALE : StarlightProvider.PREF_UPSCALE;
++                    boolean zPrefBool = StarlightProvider.prefBool(activity, key, false);
+                     boolean zNew = !zPrefBool;
+-                    StarlightProvider.prefEdit(activity).putBoolean(StarlightProvider.PREF_UPSCALE, zNew).apply();
++                    StarlightProvider.prefEdit(activity).putBoolean(key, zNew).apply();
+                     int iMax = Math.max(2, Math.min(4, StarlightProvider.prefInt(activity, StarlightProvider.PREF_UPSCALE_SCALE, 2)));
+                     if (StarlightProvider.sScaleToast != null) {
+                         StarlightProvider.sScaleToast.cancel();
+                     }
+-                    Toast unused = StarlightProvider.sScaleToast = Toast.makeText(activity, zNew ? "Starlight SR ON \u00b7 " + iMax + "x auto" : "Starlight SR OFF \u00b7 hold to process last", 0);
++                    String label = video
++                            ? (zNew ? "Video SR ON \u00b7 " + iMax + "x auto" : "Video SR OFF \u00b7 hold to process last video")
++                            : (zNew ? "Starlight SR ON \u00b7 " + iMax + "x auto" : "Starlight SR OFF \u00b7 hold to process last photo");
++                    Toast unused = StarlightProvider.sScaleToast = Toast.makeText(activity, label, 0);
+                     StarlightProvider.sScaleToast.show();
+-                    StarlightProvider.updateUpscaleChip(activity, textViewMakeChip);
++                    StarlightProvider.updateUpscaleChip(activity, textViewMakeChip, video);
+                     StarlightProvider.animateChipPulse(textViewMakeChip);
+                 }
+             });
+             textViewMakeChip.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.starlight.camera.StarlightProvider.3
+                 @Override // android.view.View.OnLongClickListener
+                 public boolean onLongClick(View view6) {
+-                    StarlightProvider.this.triggerLatestUpscale(activity);
++                    if (StarlightProvider.isVideoMode(viewGroup)) {
++                        StarlightProvider.this.triggerLatestVideoUpscale(activity);
++                    } else {
++                        StarlightProvider.this.triggerLatestUpscale(activity);
++                    }
+                     return true;
+                 }
+             });
+@@ -491,7 +507,20 @@
+             }
+             positionUnderRes(viewGroup, textViewMakeChip);
+             textViewMakeChip.bringToFront();
+-            updateUpscaleChip(activity, textViewMakeChip);
++            View progressRing = new View(activity);
++            progressRing.setTag("starlight_progress_ring");
++            GradientDrawable ringBg = new GradientDrawable();
++            ringBg.setShape(GradientDrawable.OVAL);
++            ringBg.setColor(0);
++            ringBg.setStroke(dp(activity, 3), 0xFFFF3B30);
++            progressRing.setBackground(ringBg);
++            progressRing.setVisibility(View.GONE);
++            progressRing.setClickable(false);
++            progressRing.setFocusable(false);
++            progressRing.setImportantForAccessibility(2);
++            FrameLayout.LayoutParams ringParams = new FrameLayout.LayoutParams(dp(activity, 64), dp(activity, 64), 8388659);
++            viewGroup.addView(progressRing, ringParams);
++            updateUpscaleChip(activity, textViewMakeChip, isVideoMode(viewGroup));
+             Log.i(TAG, "overlay capTop=" + iMin + "px insetTop=" + i + "px capH=" + iDp + "px");
+             if (prefBool(activity, PREF_MOTION, true)) {
+                 startPulse(view4);
+@@ -518,15 +547,16 @@
+                             if (z2) {
+                                 StarlightProvider.nudgeVideoQuickButton(viewGroup);
+                             }
+-                            if (!StarlightProvider.prefBool(activity, StarlightProvider.PREF_UPSCALE_BUTTON, true) || z2) {
+-                                z = false;
+-                            }
++                            StarlightProvider.installPreviewOpener(activity, viewGroup);
++                            StarlightProvider.updateProgressUi(activity, viewGroup);
++                            z = StarlightProvider.prefBool(activity, StarlightProvider.PREF_UPSCALE_BUTTON, true);
+                             textViewMakeChip.setVisibility(z ? 0 : 8);
+                             if (z) {
+                                 int iMax = Math.max(2, Math.min(4, StarlightProvider.prefInt(activity, StarlightProvider.PREF_UPSCALE_SCALE, 2)));
+-                                boolean zPrefBool2 = StarlightProvider.prefBool(activity, StarlightProvider.PREF_UPSCALE, false);
++                                String activeKey = z2 ? StarlightProvider.PREF_VIDEO_UPSCALE : StarlightProvider.PREF_UPSCALE;
++                                boolean zPrefBool2 = StarlightProvider.prefBool(activity, activeKey, false);
+                                 if (textViewMakeChip.isSelected() != zPrefBool2 || !textViewMakeChip.getText().toString().contains(iMax + "x")) {
+-                                    StarlightProvider.updateUpscaleChip(activity, textViewMakeChip);
++                                    StarlightProvider.updateUpscaleChip(activity, textViewMakeChip, z2);
+                                 }
+                             }
+                         } catch (Throwable th) {
+@@ -795,13 +825,17 @@
+ 
+     /* JADX INFO: Access modifiers changed from: private */
+     public static void updateUpscaleChip(Activity activity, TextView textView) {
++        updateUpscaleChip(activity, textView, false);
++    }
++
++    public static void updateUpscaleChip(Activity activity, TextView textView, boolean video) {
+         if (textView == null) {
+             return;
+         }
+         int iMax = Math.max(2, Math.min(4, prefInt(activity, PREF_UPSCALE_SCALE, 2)));
+-        boolean zPrefBool = prefBool(activity, PREF_UPSCALE, false);
++        boolean zPrefBool = prefBool(activity, video ? PREF_VIDEO_UPSCALE : PREF_UPSCALE, false);
+         textView.setSelected(zPrefBool);
+-        SpannableString label = new SpannableString("\u2726\n" + iMax + "x");
++        SpannableString label = new SpannableString("\u2726\n" + (video ? "V" : "") + iMax + "x");
+         label.setSpan(new RelativeSizeSpan(0.42f), 2, label.length(), 33);
+         textView.setText(label);
+         textView.setTextColor(zPrefBool ? -16379361 : -420284417);
+@@ -810,9 +844,150 @@
+         gradientDrawable.setColor(zPrefBool ? -426776065 : 1712924216);
+         gradientDrawable.setStroke(dp(activity, zPrefBool ? 2 : 1), zPrefBool ? -3344385 : 1722341631);
+         textView.setBackground(ripple(gradientDrawable));
++        String what = video ? "video" : "photo";
+         textView.setContentDescription(zPrefBool
+-                ? "Starlight auto upscale on, " + iMax + "x. Tap to turn off, hold to process last photo"
+-                : "Starlight auto upscale off. Tap to turn on, hold to process last photo");
++                ? "Starlight auto " + what + " upscale on, " + iMax + "x. Tap to turn off, hold to process last " + what
++                : "Starlight auto " + what + " upscale off. Tap to turn on, hold to process last " + what);
++    }
++
++    private static boolean isVideoMode(ViewGroup viewGroup) {
++        try {
++            int identifier = viewGroup.getResources().getIdentifier("washington_ui", "id", PKG);
++            View view = identifier != 0 ? viewGroup.findViewById(identifier) : null;
++            return view != null && view.getVisibility() == View.VISIBLE;
++        } catch (Throwable th) {
++            return false;
++        }
++    }
++
++    private static void installPreviewOpener(final Activity activity, ViewGroup viewGroup) {
++        try {
++            int id = viewGroup.getResources().getIdentifier("thumbnail_button", "id", PKG);
++            View preview = id != 0 ? viewGroup.findViewById(id) : null;
++            if (preview != null && preview.getTag(0x53520001) == null) {
++                preview.setTag(0x53520001, "starlight");
++                preview.setOnClickListener(new View.OnClickListener() {
++                    @Override
++                    public void onClick(View v) {
++                        openMediaOpener(activity);
++                    }
++                });
++            }
++        } catch (Throwable th) {
++            Log.w(TAG, "preview opener: " + th);
++        }
++    }
++
++    private static void openMediaOpener(Activity activity) {
++        String[] mime = new String[1];
++        Uri uri = latestMediaUri(activity, mime);
++        if (uri == null) {
++            Toast.makeText(activity, "No recent photo or video", 0).show();
++            return;
++        }
++        Intent intent = new Intent(Intent.ACTION_VIEW);
++        intent.setDataAndType(uri, mime[0] == null ? "image/*" : mime[0]);
++        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
++        applyMediaOpener(intent);
++        try {
++            activity.startActivity(intent);
++        } catch (Throwable th) {
++            try {
++                Intent chooser = Intent.createChooser(new Intent(Intent.ACTION_VIEW)
++                        .setDataAndType(uri, mime[0] == null ? "image/*" : mime[0])
++                        .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION), "Open with");
++                activity.startActivity(chooser);
++            } catch (Throwable th2) {
++                Toast.makeText(activity, "No gallery app found", 0).show();
++            }
++        }
++    }
++
++    private static Uri latestMediaUri(Context context, String[] mimeOut) {
++        Uri image = null;
++        Uri video = null;
++        long imageTime = -1L;
++        long videoTime = -1L;
++        Cursor cursor = null;
++        try {
++            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
++                    new String[]{"_id", "date_added"}, null, null, "date_added DESC");
++            if (cursor != null && cursor.moveToFirst()) {
++                imageTime = cursor.getLong(1);
++                image = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, cursor.getLong(0));
++            }
++        } catch (Throwable ignored) {
++        } finally {
++            if (cursor != null) cursor.close();
++        }
++        try {
++            cursor = context.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
++                    new String[]{"_id", "date_added"}, null, null, "date_added DESC");
++            if (cursor != null && cursor.moveToFirst()) {
++                videoTime = cursor.getLong(1);
++                video = ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, cursor.getLong(0));
++            }
++        } catch (Throwable ignored) {
++        } finally {
++            if (cursor != null) cursor.close();
++        }
++        if (image != null && imageTime >= videoTime) {
++            mimeOut[0] = "image/*";
++            return image;
++        }
++        if (video != null) {
++            mimeOut[0] = "video/*";
++            return video;
++        }
++        mimeOut[0] = "image/*";
++        return image;
++    }
++
++    private static void updateProgressUi(Activity activity, ViewGroup viewGroup) {
++        try {
++            boolean running = sPhotoProcessing || StarlightVideoSR.isProcessing();
++            View ring = viewGroup.findViewWithTag("starlight_progress_ring");
++            if (ring != null) {
++                ring.setVisibility(running ? View.VISIBLE : View.GONE);
++                if (running) {
++                    positionRingOverPreview(activity, viewGroup, ring);
++                    ring.setAlpha(0.55f + 0.45f * (float) Math.abs(Math.sin(System.currentTimeMillis() / 450.0d)));
++                }
++            }
++            if (running) {
++                int pct = sPhotoProcessing ? sPhotoProgress : StarlightVideoSR.progress();
++                StarlightProgressNotifier.update(activity, sPhotoProcessing ? "Starlight Photo SR" : "Starlight Video SR", pct);
++            } else {
++                StarlightProgressNotifier.stop(activity);
++            }
++        } catch (Throwable th) {
++            Log.w(TAG, "progress ui: " + th);
++        }
++    }
++
++    private static void positionRingOverPreview(Activity activity, ViewGroup viewGroup, View ring) {
++        try {
++            int id = viewGroup.getResources().getIdentifier("thumbnail_button", "id", PKG);
++            View preview = id != 0 ? viewGroup.findViewById(id) : null;
++            if (preview == null || preview.getWidth() <= 0) {
++                return;
++            }
++            int[] loc = new int[2];
++            preview.getLocationOnScreen(loc);
++            int size = Math.max(dp(activity, 56), preview.getWidth() + dp(activity, 10));
++            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) ring.getLayoutParams();
++            lp.width = size;
++            lp.height = size;
++            lp.gravity = 8388659;
++            lp.leftMargin = loc[0] - dp(activity, 5) + (preview.getWidth() - size) / 2;
++            lp.topMargin = loc[1] - dp(activity, 5) + (preview.getHeight() - size) / 2;
++            ring.setLayoutParams(lp);
++        } catch (Throwable ignored) {
++        }
++    }
++
++    public static boolean isPhotoProcessing() {
++        return sPhotoProcessing;
+     }
+ 
+     /* JADX INFO: Access modifiers changed from: private */
+@@ -857,6 +1032,13 @@
+                     int iDp = StarlightProvider.dp(viewGroup.getContext(), 11);
+                     int iDp2 = StarlightProvider.dp(viewGroup.getContext(), 607);
+                     View viewFindViewById = identifier != 0 ? viewGroup.findViewById(identifier) : null;
++                    if (viewFindViewById == null || viewFindViewById.getVisibility() != 0 || viewFindViewById.getWidth() <= 0 || viewFindViewById.getHeight() <= 0) {
++                        int videoId = viewGroup.getResources().getIdentifier("washington_ui", "id", PKG);
++                        View videoView = videoId != 0 ? viewGroup.findViewById(videoId) : null;
++                        if (videoView != null && videoView.getVisibility() == 0 && videoView.getWidth() > 0 && videoView.getHeight() > 0) {
++                            viewFindViewById = videoView;
++                        }
++                    }
+                     if (viewFindViewById != null && viewFindViewById.getVisibility() == 0 && viewFindViewById.getWidth() > 0 && viewFindViewById.getHeight() > 0) {
+                         int[] iArr = new int[2];
+                         viewFindViewById.getLocationOnScreen(iArr);
+@@ -923,6 +1105,12 @@
+         });
+     }
+ 
++    /* JADX INFO: Access modifiers changed from: private */
++    public void triggerLatestVideoUpscale(Activity activity) {
++        Toast.makeText(activity, "Upscaling latest video (experimental)", 0).show();
++        StarlightVideoSR.processLatest(activity);
++    }
++
+     private static void applyStabPrefs(Context context) {
+         try {
+             int iPrefInt = prefInt(context, PREF_STAB, 1);
+@@ -1307,6 +1495,37 @@
+         }
+     }
+ 
++    private static void migrateBooleanPrefs(Context context) {
++        try {
++            String[] keys = new String[]{
++                    PREF_SMART, PREF_UPSCALE, PREF_UPSCALE_BUTTON,
++                    PREF_VIDEO_UPSCALE, PREF_OVERLAY, PREF_GLASS, PREF_MOTION
++            };
++            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
++            SharedPreferences.Editor editor = prefs.edit();
++            boolean changed = false;
++            for (String key : keys) {
++                Object value = prefs.getAll().get(key);
++                if (value instanceof String) {
++                    String text = (String) value;
++                    if ("1".equals(text) || "true".equalsIgnoreCase(text)) {
++                        editor.putBoolean(key, true);
++                        changed = true;
++                    } else if ("0".equals(text) || "false".equalsIgnoreCase(text)) {
++                        editor.putBoolean(key, false);
++                        changed = true;
++                    }
++                }
++            }
++            if (changed) {
++                editor.apply();
++                Log.i(TAG, "migrated boolean prefs");
++            }
++        } catch (Throwable th) {
++            Log.w(TAG, "boolean migration: " + th);
++        }
++    }
++
+     private static void migrateUpscaleScale(Context context) {
+         Object obj;
+         try {
+@@ -1728,7 +1947,16 @@
+                 i++;
+                 j = length;
+             }
+-            rename(uri, str, str.contains("TIMELAPSE") ? "Timelapse" : "Video", file);
++            File renamed = rename(uri, str, str.contains("TIMELAPSE") ? "Timelapse" : "Video", file);
++            if (renamed != null && !str.contains("_Upscaled") && prefBool(getContext(), PREF_VIDEO_UPSCALE, false)) {
++                final File target = renamed;
++                new Thread(new Runnable() {
++                    @Override
++                    public void run() {
++                        StarlightVideoSR.process(getContext(), target, 2, 24, 720);
++                    }
++                }, "starlight-auto-video-sr").start();
++            }
+         } catch (Throwable th) {
+             Log.w(TAG, "nameVideo: " + th);
+         }
+@@ -2258,6 +2486,14 @@
+         }
+     }
+ 
++    private static boolean isMaxPhotoQuality(Context context) {
++        try {
++            return context != null && "max".equals(prefString(context, PREF_PHOTO_QUALITY, "default"));
++        } catch (Throwable th) {
++            return false;
++        }
++    }
++
+     private static String upscaleStem(String str) {
+         int iLastIndexOf = str.lastIndexOf(46);
+         if (iLastIndexOf > 0) {
+@@ -2272,7 +2508,10 @@
+ 
+     /* JADX INFO: Access modifiers changed from: private */
+     public void upscalePhoto(File file, int i) {
+-        long j = 24000000;
++        long j = isMaxPhotoQuality(getContext()) ? UPSCALE_MAX_PIXELS : UPSCALE_DEFAULT_MAX_PIXELS;
++        sPhotoProcessing = true;
++        sPhotoProgress = 5;
++        StarlightProgressNotifier.update(getContext(), "Starlight Photo SR", 5);
+         for (int i2 = 0; i2 < 3; i2++) {
+             try {
+                 if (upscaleOnce(file, i, j)) {
+@@ -2286,6 +2525,8 @@
+                             }
+                         });
+                     }
++                    sPhotoProcessing = false;
++                    sPhotoProgress = 100;
+                     return;
+                 }
+             } catch (OutOfMemoryError e) {
+@@ -2294,9 +2535,11 @@
+                 Log.w(TAG, "upscale OOM, retry cap=" + j);
+             } catch (Throwable th) {
+                 Log.w(TAG, "upscale failed: " + th);
++                sPhotoProcessing = false;
+                 return;
+             }
+         }
++        sPhotoProcessing = false;
+         Log.w(TAG, "upscale skipped after retries: " + file.getName());
+     }
+ 
+@@ -2331,7 +2574,12 @@
+         if (context == null) {
+             return true;
+         }
+-        boolean ok = StarlightSR.process(context, file, i, UPSCALE_JPEG_QUALITY, j);
++        boolean max = isMaxPhotoQuality(context);
++        int quality = max ? 100 : 98;
++        long cap = max ? UPSCALE_MAX_PIXELS : UPSCALE_DEFAULT_MAX_PIXELS;
++        boolean ok = max
++                ? StarlightSR.process(context, file, i, quality, cap)
++                : StarlightSRDefault.process(context, file, i, quality, cap);
+         if (ok) {
+             Log.i(TAG, "upscale done " + file.getName() + " scale=" + i);
+         }
